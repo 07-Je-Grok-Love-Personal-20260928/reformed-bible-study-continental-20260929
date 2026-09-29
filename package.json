@@ -1,0 +1,11 @@
+{
+  "name": "bible-study-reformed",
+  "version": "1.0.0",
+  "private": true,
+  "description": "欧陆改革宗整本圣经研读静态站点",
+  "scripts": {
+    "start": "npx --yes serve -l 3456 .",
+    "preview": "npx --yes serve -l 3456 ."
+  },
+  "keywords": ["bible", "reformed", "zh-CN", "static"]
+}
