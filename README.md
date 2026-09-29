@@ -14,7 +14,7 @@
 ## 目录结构
 
 ```
-bible-study-reformed/
+reformed-bible-study-continental-20260929/
 ├── index.html          # 主页面（全部内容）
 ├── assets/
 │   ├── styles.css      # 主题与布局
@@ -32,7 +32,7 @@ bible-study-reformed/
 ### 方式二：npm 脚本
 
 ```bash
-cd bible-study-reformed
+cd reformed-bible-study-continental-20260929
 npm install   # 安装 serve（可选）
 npm start     # 默认 http://localhost:3456
 ```
@@ -70,8 +70,8 @@ Soli Deo Gloria
 
 ## 在线地址
 
-- GitHub 仓库：https://github.com/07-Je-Grok-Love-Personal-20260928/bible-study-reformed
-- GitHub Pages：https://07-je-grok-love-personal-20260928.github.io/bible-study-reformed/
-- Surge：https://reformed-bible-study.surge.sh/
-- Netlify：部署完成后补充
+- GitHub 仓库：https://github.com/07-Je-Grok-Love-Personal-20260928/reformed-bible-study-continental-20260929
+- GitHub Pages：https://07-je-grok-love-personal-20260928.github.io/reformed-bible-study-continental-20260929/
+- Surge：https://reformed-bible-study-20260929.surge.sh/
+- Netlify：授权  后补充
 
