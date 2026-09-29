@@ -1,4 +1,4 @@
-/* Continental Reformed Bible Study — App Logic */
+/* Continental Reformed Bible Study — App Logic (light theme) */
 (function () {
   "use strict";
 
@@ -167,34 +167,36 @@
     window.scrollTo({ top: 0, behavior: scrollBehavior() });
   });
 
-  /* —— Expand / collapse all details —— */
+  /* —— Expand / collapse appendix details only —— */
   document.getElementById("expand-all")?.addEventListener("click", () => {
-    document.querySelectorAll("details.fold").forEach((d) => { d.open = true; });
+    document.querySelectorAll("details.fold.appendix").forEach((d) => { d.open = true; });
   });
   document.getElementById("collapse-all")?.addEventListener("click", () => {
-    document.querySelectorAll("details.fold").forEach((d) => { d.open = false; });
+    document.querySelectorAll("details.fold.appendix").forEach((d) => { d.open = false; });
   });
 
-  /* —— Init Mermaid —— */
+  /* —— Init Mermaid (light theme) —— */
   function initMermaid() {
     if (typeof mermaid === "undefined") return;
     mermaid.initialize({
       startOnLoad: false,
-      theme: "dark",
+      theme: "base",
       themeVariables: {
-        primaryColor: "#1a2b45",
-        primaryTextColor: "#e8eef7",
-        primaryBorderColor: "#c9a227",
-        lineColor: "#d4af37",
-        secondaryColor: "#152238",
-        tertiaryColor: "#0f1a2e",
-        background: "#0f1a2e",
-        mainBkg: "#1a2b45",
-        nodeBorder: "#c9a227",
-        clusterBkg: "#152238",
-        titleColor: "#f0d878",
-        edgeLabelBackground: "#152238",
+        primaryColor: "#e8efe9",
+        primaryTextColor: "#2c3338",
+        primaryBorderColor: "#5a6b5d",
+        lineColor: "#5a7a9a",
+        secondaryColor: "#f7f3eb",
+        tertiaryColor: "#fffcf7",
+        background: "#fffcf7",
+        mainBkg: "#e8efe9",
+        nodeBorder: "#5a6b5d",
+        clusterBkg: "#f3efe6",
+        titleColor: "#2c3338",
+        edgeLabelBackground: "#fffcf7",
         fontFamily: "system-ui, Noto Sans SC, sans-serif",
+        textColor: "#2c3338",
+        nodeTextColor: "#2c3338",
       },
       flowchart: { curve: "basis", padding: 12, useMaxWidth: true, htmlLabels: true },
       mindmap: { useMaxWidth: true },
