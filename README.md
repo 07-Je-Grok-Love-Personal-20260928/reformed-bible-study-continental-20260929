@@ -72,5 +72,6 @@ Soli Deo Gloria
 
 - GitHub 仓库：https://github.com/07-Je-Grok-Love-Personal-20260928/bible-study-reformed
 - GitHub Pages：https://07-je-grok-love-personal-20260928.github.io/bible-study-reformed/
-- Surge / Netlify：部署完成后补充
+- Surge：https://reformed-bible-study.surge.sh/
+- Netlify：部署完成后补充
 
