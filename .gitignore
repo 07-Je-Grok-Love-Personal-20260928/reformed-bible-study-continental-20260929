@@ -3,3 +3,6 @@ node_modules/
 .env
 .surge-env
 CNAME
+
+# Local Netlify folder
+.netlify
