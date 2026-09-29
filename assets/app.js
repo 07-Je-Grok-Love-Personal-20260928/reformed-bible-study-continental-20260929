@@ -6,13 +6,17 @@
   const overlay = document.getElementById("sidebar-overlay");
   const menuBtn = document.getElementById("menu-toggle");
   const appShell = document.getElementById("app-shell");
-  const progressBar = document.getElementById("progress-bar");
   const backTop = document.getElementById("back-top");
   const tocNav = document.getElementById("toc-nav");
   const tocSearch = document.getElementById("toc-search");
   const main = document.getElementById("main");
 
-  const MQ_DESKTOP = window.matchMedia("(min-width: 1100px)");
+  const MQ_DESKTOP = window.matchMedia("(min-width: 901px)");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function scrollBehavior() {
+    return reduceMotion ? "auto" : "smooth";
+  }
 
   /* —— Build TOC from headings —— */
   function buildToc() {
@@ -22,14 +26,12 @@
     headings.forEach((h) => {
       const a = document.createElement("a");
       a.href = "#" + h.id;
-      a.textContent = h.textContent.replace(/^\d+[\.\s]*/, "").trim() || h.textContent;
-      // Keep number prefix if present for clarity
       a.textContent = h.textContent.trim();
       a.dataset.target = h.id;
       if (h.tagName === "H3") a.classList.add("toc-h3");
       a.addEventListener("click", (e) => {
         e.preventDefault();
-        document.getElementById(h.id)?.scrollIntoView({ behavior: "smooth" });
+        document.getElementById(h.id)?.scrollIntoView({ behavior: scrollBehavior() });
         history.replaceState(null, "", "#" + h.id);
         if (!MQ_DESKTOP.matches) closeSidebar();
       });
@@ -45,12 +47,14 @@
     overlay?.classList.add("show");
     menuBtn?.setAttribute("aria-expanded", "true");
     if (MQ_DESKTOP.matches) appShell?.classList.add("sidebar-visible");
+    document.body.style.overflow = MQ_DESKTOP.matches ? "" : "hidden";
   }
 
   function closeSidebar() {
     sidebar?.classList.remove("open");
     overlay?.classList.remove("show");
     menuBtn?.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
     if (MQ_DESKTOP.matches) {
       sidebar?.classList.add("collapsed");
       appShell?.classList.remove("sidebar-visible");
@@ -58,8 +62,6 @@
   }
 
   function toggleSidebar() {
-    const isOpen = sidebar?.classList.contains("open") ||
-      (MQ_DESKTOP.matches && appShell?.classList.contains("sidebar-visible") && !sidebar?.classList.contains("collapsed"));
     if (MQ_DESKTOP.matches) {
       if (appShell?.classList.contains("sidebar-visible") && !sidebar?.classList.contains("collapsed")) {
         closeSidebar();
@@ -73,6 +75,7 @@
   }
 
   function initSidebarState() {
+    document.body.style.overflow = "";
     if (MQ_DESKTOP.matches) {
       sidebar?.classList.add("open");
       sidebar?.classList.remove("collapsed");
@@ -95,6 +98,22 @@
 
   MQ_DESKTOP.addEventListener("change", initSidebarState);
 
+  /* —— Swipe to close drawer (touch) —— */
+  let touchStartX = 0;
+  let touchStartY = 0;
+  sidebar?.addEventListener("touchstart", (e) => {
+    const t = e.changedTouches[0];
+    touchStartX = t.screenX;
+    touchStartY = t.screenY;
+  }, { passive: true });
+  sidebar?.addEventListener("touchend", (e) => {
+    if (MQ_DESKTOP.matches || !sidebar.classList.contains("open")) return;
+    const t = e.changedTouches[0];
+    const dx = t.screenX - touchStartX;
+    const dy = Math.abs(t.screenY - touchStartY);
+    if (dx < -60 && dy < 80) closeSidebar();
+  }, { passive: true });
+
   /* —— TOC search —— */
   tocSearch?.addEventListener("input", () => {
     const q = tocSearch.value.trim().toLowerCase();
@@ -108,18 +127,17 @@
   const headingEls = [];
 
   function onScroll() {
-    const scrollTop = window.scrollY;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const docH = document.documentElement.scrollHeight - window.innerHeight;
     const pct = docH > 0 ? Math.min(100, (scrollTop / docH) * 100) : 0;
     document.documentElement.style.setProperty("--progress", pct + "%");
 
     if (backTop) {
-      backTop.classList.toggle("show", scrollTop > 500);
+      backTop.classList.toggle("show", scrollTop > 400);
     }
 
-    // Active heading
     if (!headingEls.length) return;
-    const offset = 80;
+    const offset = (parseInt(getComputedStyle(document.documentElement).getPropertyValue("--header-h"), 10) || 56) + 24;
     let current = headingEls[0];
     for (const h of headingEls) {
       if (h.getBoundingClientRect().top <= offset) current = h;
@@ -141,9 +159,12 @@
       ticking = true;
     }
   }, { passive: true });
+  window.addEventListener("resize", () => {
+    onScroll();
+  }, { passive: true });
 
   backTop?.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: scrollBehavior() });
   });
 
   /* —— Expand / collapse all details —— */
@@ -173,9 +194,10 @@
         clusterBkg: "#152238",
         titleColor: "#f0d878",
         edgeLabelBackground: "#152238",
-        fontFamily: "Noto Sans SC, sans-serif",
+        fontFamily: "system-ui, Noto Sans SC, sans-serif",
       },
-      flowchart: { curve: "basis", padding: 12 },
+      flowchart: { curve: "basis", padding: 12, useMaxWidth: true, htmlLabels: true },
+      mindmap: { useMaxWidth: true },
       securityLevel: "loose",
     });
     mermaid.run({ querySelector: ".mermaid" }).catch((err) => {
@@ -183,19 +205,39 @@
     });
   }
 
+  /* —— Wrap mermaid after render for scroll safety —— */
+  function enhanceDiagramScroll() {
+    document.querySelectorAll(".mermaid-wrap").forEach((wrap) => {
+      wrap.classList.add("diagram-scroll");
+    });
+    document.querySelectorAll(".table-wrap").forEach((wrap) => {
+      wrap.classList.add("table-scroll");
+    });
+  }
+
   /* —— Hash on load —— */
   function scrollToHash() {
     if (location.hash) {
       const el = document.getElementById(location.hash.slice(1));
-      if (el) setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100);
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: scrollBehavior() }), 120);
+    }
+  }
+
+  /* —— Viewport meta safe-area helper (viewport-fit) —— */
+  function ensureViewportFit() {
+    const meta = document.querySelector('meta[name="viewport"]');
+    if (meta && !/viewport-fit/.test(meta.content)) {
+      meta.content = meta.content + ", viewport-fit=cover";
     }
   }
 
   /* —— Boot —— */
   function boot() {
+    ensureViewportFit();
     buildToc();
     headingEls.push(...main.querySelectorAll("h2[id], h3[id]"));
     initSidebarState();
+    enhanceDiagramScroll();
     initMermaid();
     onScroll();
     scrollToHash();

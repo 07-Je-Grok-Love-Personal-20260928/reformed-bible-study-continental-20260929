@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="欧陆改革宗整本圣经研读：三项联合信条与三大普世信经框架下的救赎历史、圣约神学、诸王时代与分卷要点。" />
   <title>欧陆改革宗 · 整本圣经研读</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -29,7 +29,9 @@
 
   <div class="app-shell" id="app-shell">
     <aside class="sidebar" id="sidebar" aria-label="目录">
-      <input type="search" class="toc-search" id="toc-search" placeholder="搜索目录…" autocomplete="off" />
+      <div class="toc-search-wrap">
+        <input type="search" class="toc-search" id="toc-search" placeholder="搜索目录…" autocomplete="off" aria-label="搜索目录" />
+      </div>
       <div class="toc-label">目录导航</div>
       <nav class="toc-nav" id="toc-nav"></nav>
     </aside>
@@ -45,7 +47,7 @@
     <text x="36" y="64" text-anchor="middle" fill="#f0d878" font-size="7" font-family="serif">SOLI DEO GLORIA</text>
   </svg>
   <h1>整本圣经 · 欧陆改革宗研读</h1>
-  <p class="lead" style="text-align:left;max-width:40em;margin-left:auto;margin-right:auto">
+  <p class="lead">
     以<strong>唯独圣经、唯独恩典、唯独信心、唯独基督、唯独荣耀归于神</strong>为根基，在<strong>三项联合信条</strong>（比利时信条、海德堡要理问答、多特信经）与<strong>三大普世信经</strong>（使徒、尼西亚、亚他那修）护卫下，先宏观后局部，贯通救赎历史、圣约神学与诸王时代。
   </p>
   <div class="hero-meta">
@@ -54,6 +56,7 @@
     <span class="chip">圣经神学</span>
     <span class="chip">诸王与时代</span>
     <span class="chip">基督中心</span>
+    <a class="chip" href="#sec-2-2">手机速记</a>
   </div>
   <div class="solas">
     <div class="sola"><div class="sola-lat">Sola Scriptura</div><div class="sola-zh">唯独圣经</div></div>
@@ -116,7 +119,7 @@
   <h2 id="sec-1">1. 宏观：正典结构与救赎历史鸟瞰</h2>
 
   <h3 id="sec-1-1">希伯来正典三分 + 新约</h3>
-  <div class="table-wrap">
+  <div class="table-wrap table-scroll">
     <table>
       <thead>
         <tr><th>区部</th><th>希伯来名</th><th>内容（概）</th><th>神学功能</th></tr>
@@ -132,7 +135,7 @@
   <p class="note">基督教常见「律法·历史·诗歌智慧·大先知·小先知」编排便于阅读；希伯来三分更凸显「约的叙事」：律法立约 → 先知追责/应许 → 圣卷在苦难中敬拜与智慧。</p>
 
   <h3 id="sec-1-2">救赎历史时期表</h3>
-  <div class="table-wrap">
+  <div class="table-wrap table-scroll">
     <table>
       <thead>
         <tr><th>时期</th><th>关键事件</th><th>主要经卷</th><th>圣约焦点</th></tr>
@@ -205,6 +208,32 @@ flowchart LR
   style L fill:#3d9a6a,stroke:#6dce9a,color:#fff
     </pre>
   </div>
+
+  <h3 id="sec-2-2">手机速记</h3>
+  <div class="phone-memo" id="phone-memo">
+    <p class="text-muted" style="margin-bottom:.85rem">专为手机速查：年代、分裂口诀、圣约一句话。建议截图或加入主屏幕书签。</p>
+    <div class="card-grid cols-3">
+      <div class="card card-gold">
+        <span class="card-tag">关键年代</span>
+        <div class="memo-line">931 · 722 · 586 · 538</div>
+        <p class="memo-sub">分裂 → 北亡亚述 → 南亡巴比伦 → 古列归回。再记：516 二殿 · 458 以斯拉 · 445 尼希米。</p>
+      </div>
+      <div class="card card-gold">
+        <span class="card-tag">王国分裂口诀</span>
+        <div class="memo-line">北无好王 · 南有明君</div>
+        <p class="memo-sub">北：耶牛→亚哈巴力→耶户半改→722。<br/>南：希西家蒙救→玛拿西填满→约西亚太迟→586。</p>
+      </div>
+      <div class="card card-gold">
+        <span class="card-tag">圣约一句话</span>
+        <div class="memo-line">亚当里死 · 基督里活</div>
+        <p class="memo-sub">行为之约破 → 恩典之约立；挪亚·亚伯·摩西·大卫·新约 = 同一恩典、不同施行。</p>
+      </div>
+    </div>
+    <div class="motto" style="margin-top:1rem;margin-bottom:0">
+      <div class="motto-text">九三一分 · 七二二亡北 · 五八六亡南 · 五三八归回</div>
+      <div class="motto-hint">整本圣经一句话：神藉耶稣基督的救赎，为自己得着敬拜的子民，直到永远。</div>
+    </div>
+  </div>
 </section>
 
 <!-- ========== 3 圣约神学 ========== -->
@@ -227,7 +256,7 @@ flowchart LR
   </div>
 
   <h3 id="sec-3-2">圣约对照表</h3>
-  <div class="table-wrap">
+  <div class="table-wrap table-scroll">
     <table>
       <thead>
         <tr><th>圣约</th><th>关键经文</th><th>记号</th><th>核心应许</th><th>指向基督</th></tr>
@@ -269,6 +298,57 @@ mindmap
   </div>
 
   <div class="note">信条呼应提示：比利时信条第 16–17（拣选与拯救计划）、第 22–23（因信称义）；海德堡 Q&amp;A 18–23（中保与信）；多特信经第一、二项教义（拣选与基督之死）。请自行对照信条全文，本站仅标条款号。</div>
+
+  <h3 id="sec-3-4">行为之约 → 恩典之约：前后对照</h3>
+  <p>同一位神、同一救赎目标；堕落把「靠行为得生命」之路封死，恩典之约以基督为中保开辟「靠恩典、藉信心」之路。下表帮助把「以前 / 以后」记在心里（教学简化）。</p>
+  <div class="covenant-flow">
+    <div class="flow-box">
+      <h4>以前：行为之约（亚当）</h4>
+      <ul class="mb-0">
+        <li><strong>代表</strong>：亚当代表全人类</li>
+        <li><strong>条件</strong>：完全顺服 → 生命</li>
+        <li><strong>结果</strong>：违约 → 罪与死归算（罗 5）</li>
+        <li><strong>处境</strong>：人无力自救；律法显罪</li>
+      </ul>
+    </div>
+    <div class="flow-arrow" aria-hidden="true">→</div>
+    <div class="flow-box after">
+      <h4>以后：恩典之约（基督中保）</h4>
+      <ul class="mb-0">
+        <li><strong>代表</strong>：末后亚当基督代表选民</li>
+        <li><strong>条件</strong>：基督已成全义；人唯独信心领受</li>
+        <li><strong>结果</strong>：义的归算、罪得赦、得生命</li>
+        <li><strong>处境</strong>：圣灵重生；善行是感恩果子</li>
+      </ul>
+    </div>
+  </div>
+  <div class="table-wrap table-scroll">
+    <table>
+      <thead>
+        <tr><th>对照点</th><th>行为之约</th><th>恩典之约</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>发起者</td><td>神设立</td><td>神主动施恩</td></tr>
+        <tr><td>中保</td><td>无（亚当亲自承担）</td><td>耶稣基督（唯一中保）</td></tr>
+        <tr><td>要求</td><td>人的完全顺服</td><td>基督的顺服归给人</td></tr>
+        <tr><td>领受方式</td><td>行为</td><td>信心（本身也是恩赐）</td></tr>
+        <tr><td>记号（历史展开）</td><td>生命树（传统理解）</td><td>割礼/逾越 → 洗礼/圣餐</td></tr>
+        <tr><td>失败与成全</td><td>亚当失败</td><td>基督成全；阶段性圣约展开同一恩典</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="motto">
+    <div class="motto-text">一句话：亚当里死 · 基督里活 · 约不改目标 · 中保已更换</div>
+    <div class="motto-hint">海德堡 Q&amp;A 12–18：公义要求与中保的必要性；比利时信条 17、22。</div>
+  </div>
+
+  <h3 id="sec-3-5">阶段性圣约如何「同一恩典」</h3>
+  <p>挪亚维系舞台；亚伯拉罕显应许与称义；摩西以律法与影儿保育；大卫锚定永远君王；新约以宝血成全并内写律法。不是五套不同的救法，而是<strong>同一恩典之约在救赎历史上的施行（administrations）</strong>。</p>
+  <ul>
+    <li><strong>连续性</strong>：一位神、一位中保、以信称义的原则（罗 4 以亚伯拉罕为证）。</li>
+    <li><strong>进展性</strong>：启示越来越清楚；影儿 → 实体（来 10）。</li>
+    <li><strong>群体性</strong>：约不仅是「我与神」，也是神为自己召聚敬拜的子民（教会）。</li>
+  </ul>
 </section>
 
 <!-- ========== 4 圣经神学主线 ========== -->
@@ -296,24 +376,24 @@ mindmap
   <details class="fold" open>
     <summary>创世记 — 起源与应许</summary>
     <div class="fold-body book-study">
-      <div class="book-col bg"><strong>背景</strong><p>摩西五经开端；从创造到以色列下埃及，奠定救赎史起点。</p></div>
-      <div class="book-col purpose"><strong>写作目的</strong><p>回答「我们是谁、为何蒙拣选」：创造主立约、罪入世界、应许后裔。</p></div>
-      <div class="book-col outline"><strong>内容提纲</strong><p>1–11 太古史；12–50 族长叙事（亚伯拉罕、以撒、雅各、约瑟）。</p></div>
-      <div class="book-col theology"><strong>神学核心</strong><p>创造主权、堕落与审判、拣选恩典、以信称义（创 15:6）。</p></div>
-      <div class="book-col christ"><strong>基督指向</strong><p>女人后裔；亚伯拉罕之种；约瑟式「受苦升高」预表；犹大权杖（创 49:10）。</p></div>
-      <div class="book-col apply"><strong>应用</strong><p>信靠应许之神；在罪恶世界中持守圣约身份，拒绝神话化或自然神论读法。</p></div>
+      <div class="book-col bg"><strong>背景</strong><p>摩西五经开端；从创造到约瑟下埃及。面向即将出埃及、进迦南的约民，回答「我们从哪里来、为何是神的子民」。历史叙事，非神话；神在真实时空中行动。</p></div>
+      <div class="book-col purpose"><strong>写作目的</strong><p>奠定创造—堕落—应许主线；显明拣选恩典如何透过族长延续，为出埃及与西奈之约铺路。</p></div>
+      <div class="book-col outline"><strong>内容提纲</strong><p>1–2 创造；3 堕落与福音胚芽；4–11 罪扩散与洪水/巴别；12–25 亚伯拉罕；26–27 以撒；28–36 雅各；37–50 约瑟与下埃及。</p></div>
+      <div class="book-col theology"><strong>神学核心</strong><p>神是创造主与立约主；罪与死进入世界；拣选不在人的美德；「亚伯兰信耶和华，耶和华就以此为他的义」（创 15:6）成称义范式。</p></div>
+      <div class="book-col christ"><strong>基督指向</strong><p>女人后裔（3:15）；以撒「独一的儿子」与代赎暗示；约瑟从坑到高位拯救多民；犹大权杖与细罗（49:10）；真后裔是基督（加 3:16）。</p></div>
+      <div class="book-col apply"><strong>应用</strong><p>信靠应许而非环境；在家庭与苦难中看见护理；拒绝把创世记当作寓言消解历史，也拒绝道德主义忽略恩典。</p></div>
     </div>
   </details>
 
   <details class="fold">
     <summary>出埃及记 — 救赎与同在</summary>
     <div class="fold-body book-study">
-      <div class="book-col bg"><strong>背景</strong><p>以色列为奴于埃及；神记念与亚伯拉罕所立的约。</p></div>
-      <div class="book-col purpose"><strong>写作目的</strong><p>记述救赎、立约、会幕，显明「我是耶和华」。</p></div>
-      <div class="book-col outline"><strong>内容提纲</strong><p>1–18 出埃及；19–24 西奈之约；25–40 会幕与荣耀充满。</p></div>
-      <div class="book-col theology"><strong>神学核心</strong><p>用大能膀臂救赎；约民分别为圣；神与人同住。</p></div>
-      <div class="book-col christ"><strong>基督指向</strong><p>逾越节羔羊；真吗哪；会幕的实体（约 1:14；林前 5:7）。</p></div>
-      <div class="book-col apply"><strong>应用</strong><p>救恩先于律法要求；敬拜按神所命定，非按己意。</p></div>
+      <div class="book-col bg"><strong>背景</strong><p>以色列在埃及为奴约数百年；法老压迫；神「听见、记念、看见」（出 2:24–25）亚伯拉罕之约。</p></div>
+      <div class="book-col purpose"><strong>写作目的</strong><p>显明耶和华是救赎主与立约主：先救拔，后颁布律法与敬拜典章，并以会幕同在。</p></div>
+      <div class="book-col outline"><strong>内容提纲</strong><p>1–6 压迫与呼召摩西；7–15 十灾与出埃及；16–18 旷野供应；19–24 西奈立约与约书；25–31 会幕指示；32–34 金牛犊与更新；35–40 建造与荣光充满。</p></div>
+      <div class="book-col theology"><strong>神学核心</strong><p>救赎在先、律法在后；血的遮盖；「我是自有永有」；圣洁的神住在百姓中间；约破裂仍有中保代求（摩西）。</p></div>
+      <div class="book-col christ"><strong>基督指向</strong><p>逾越节羔羊（林前 5:7）；出埃及预表更大的救赎；吗哪与磐石（约 6；林前 10）；道成肉身「支搭帐棚」（约 1:14）；真会幕。</p></div>
+      <div class="book-col apply"><strong>应用</strong><p>先领受救恩再学顺服；敬拜不可随己意创新；靠中保而非靠自己的热心；纪念神的救赎作为。</p></div>
     </div>
   </details>
 
@@ -344,12 +424,12 @@ mindmap
   <details class="fold">
     <summary>申命记 — 重申之约与选择</summary>
     <div class="fold-body book-study">
-      <div class="book-col bg"><strong>背景</strong><p>进迦南前，摩西在摩押向新一代讲道。</p></div>
-      <div class="book-col purpose"><strong>写作目的</strong><p>重申约、陈明祝福咒诅、呼召尽心爱神。</p></div>
-      <div class="book-col outline"><strong>内容提纲</strong><p>1–11 回顾与劝勉；12–26 典章；27–34 祝福咒诅、继承。</p></div>
-      <div class="book-col theology"><strong>神学核心</strong><p>唯一真神；心约；爱与顺服；先知如摩西者。</p></div>
-      <div class="book-col christ"><strong>基督指向</strong><p>那先知（申 18；徒 3:22）；诅咒挂木（申 21:23；加 3:13）。</p></div>
-      <div class="book-col apply"><strong>应用</strong><p>全人敬虔；教导儿女；选择生命。</p></div>
+      <div class="book-col bg"><strong>背景</strong><p>第一代倒毙旷野后，摩西在摩押平原向即将过河的第二代三篇讲道；「申命」即约的重申与更新。</p></div>
+      <div class="book-col purpose"><strong>写作目的</strong><p>把历史、律法与心志结合：唯独敬畏耶和华、尽心尽性爱神，并陈明进入之地的祝福与咒诅。</p></div>
+      <div class="book-col outline"><strong>内容提纲</strong><p>1–4 历史回顾；5–11 十诫与心约劝勉（示玛）；12–26 中央敬拜与社会责任典章；27–30 祝福咒诅与选择生命；31–34 约书亚接任、摩西之歌与祝福、摩西之死。</p></div>
+      <div class="book-col theology"><strong>神学核心</strong><p>独一神；爱是约的核心动力；心的割礼；话语中心化；先知职分；约的奖惩真实临到历史（解释日后被掳）。</p></div>
+      <div class="book-col christ"><strong>基督指向</strong><p>「像我的先知」（申 18:15–19；徒 3:22–23）；挂在木头上的咒诅由基督担当（申 21:23；加 3:13）；真示玛的成全——尽心尽性爱神的那一位。</p></div>
+      <div class="book-col apply"><strong>应用</strong><p>家庭教养与公众敬拜并重；选择生命而非随从文化偶像；读诸王与先知时以申命记为「约的评分标准」。</p></div>
     </div>
   </details>
 
@@ -417,9 +497,20 @@ mindmap
 
   <h3 id="sec-5-poet">诗歌智慧书（伯—歌）</h3>
   <details class="fold">
-    <summary>约伯 · 诗篇 · 箴言 · 传道 · 雅歌 — 要点总览</summary>
+    <summary>诗篇 — 约民的祷告与弥赛亚之歌</summary>
+    <div class="fold-body book-study">
+      <div class="book-col bg"><strong>背景</strong><p>以色列的圣诗集，跨越多世纪（大卫、可拉后裔、亚萨等）；用于圣殿与个人敬拜，被新约大量引用。</p></div>
+      <div class="book-col purpose"><strong>写作目的</strong><p>教导约民如何在赞美、哀歌、悔改、感恩与智慧中回应神；同时保存君王/弥赛亚诗，指向大卫子孙。</p></div>
+      <div class="book-col outline"><strong>内容提纲</strong><p>传统五卷（1–41 / 42–72 / 73–89 / 90–106 / 107–150）；体裁含赞美、哀歌、感恩、君王诗、智慧诗、升阶诗等。诗 1–2 作整卷门廊：妥拉与弥赛亚。</p></div>
+      <div class="book-col theology"><strong>神学核心</strong><p>神为王；锡安与圣殿；义人/恶人两条路；信实忍耐；罪得赦（诗 32、51）；话语甜美（诗 19、119）。</p></div>
+      <div class="book-col christ"><strong>基督指向</strong><p>诗 2、16、22、40、69、110 等被新约用于基督的受膏、受苦、复活、升高；主自己以诗篇祷告（可 15:34）。</p></div>
+      <div class="book-col apply"><strong>应用</strong><p>以诗篇作教会与家庭祷告书；哀歌合法；把情绪交在约中，而非压抑或拜情绪为神。</p></div>
+    </div>
+  </details>
+  <details class="fold">
+    <summary>约伯 · 箴言 · 传道 · 雅歌 — 要点总览</summary>
     <div class="fold-body">
-      <div class="table-wrap">
+      <div class="table-wrap table-scroll">
         <table>
           <thead><tr><th>书卷</th><th>核心问题</th><th>神学要点</th><th>基督 / 应用</th></tr></thead>
           <tbody>
@@ -435,21 +526,71 @@ mindmap
   </details>
 
   <h3 id="sec-5-prophet">先知书精要（赛—玛）</h3>
+  <p class="note">先知是「约的检察官与福音预告者」：按申命记标准追责，又宣告余民与弥赛亚盼望。以下为大先知六栏精读；小先知见速览表。</p>
+
   <details class="fold">
-    <summary>大先知：以赛亚 · 耶利米 · 耶哀 · 以西结 · 但以理</summary>
+    <summary>以赛亚书 — 圣洁之王与仆人之歌</summary>
+    <div class="fold-body book-study">
+      <div class="book-col bg"><strong>背景</strong><p>约主前 8 世纪，犹大面对亚述威胁；传统以赛亚事奉乌西雅至希西家年间。书卷后部亦面向被掳与归回盼望（改革宗认同一卷的先知启示整体，不靠分割作者否定预言）。</p></div>
+      <div class="book-col purpose"><strong>写作目的</strong><p>呼唤悖逆百姓归向圣洁之神；宣告审判与安慰；显明仆人以受苦成就救赎，万国得光。</p></div>
+      <div class="book-col outline"><strong>内容提纲</strong><p>1–12 犹大与以马内利；13–27 列国与普世审判；28–39 祸哉与历史插段（希西家）；40–55 安慰与仆人之歌；56–66 前途、新旧锡安与新天新地。</p></div>
+      <div class="book-col theology"><strong>神学核心</strong><p>「圣哉」的神（赛 6）；余民；信靠 vs 政治同盟；耶和华的日子；新出埃及；唯独神是救主。</p></div>
+      <div class="book-col christ"><strong>基督指向</strong><p>以马内利（7:14；太 1）；奇妙策士等（9:6–7）；耶西的根（11）；仆人之歌尤赛 53；被灵膏抹传福音（61；路 4）。</p></div>
+      <div class="book-col apply"><strong>应用</strong><p>敬畏圣洁；拒绝偶像式安全感；以受苦仆人的福音安慰良心；等候新创造。</p></div>
+    </div>
+  </details>
+
+  <details class="fold">
+    <summary>耶利米书 / 耶利米哀歌 — 拆毁、建立与新约</summary>
+    <div class="fold-body book-study">
+      <div class="book-col bg"><strong>背景</strong><p>约西亚至被掳初期；巴比伦兴起。耶利米被称为「流泪先知」，信息极不受欢迎。哀歌为圣城被毁后的诗体哀哭。</p></div>
+      <div class="book-col purpose"><strong>写作目的</strong><p>宣告犹大因违约必经拆毁；同时应许「建立与栽植」；赐下新约盼望；哀歌教导在审判中仍仰望神的信实。</p></div>
+      <div class="book-col outline"><strong>内容提纲</strong><p>耶：呼召与控诉；圣殿讲章；符号行动；与假先知对峙；被掳七十年代；新约（31）；埃及与列国神谕。哀：五首哀歌，中心是「每早晨都是新的」慈爱（哀 3）。</p></div>
+      <div class="book-col theology"><strong>神学核心</strong><p>心的问题深过礼仪；假平安信息危险；神的道如火如锤；管教后的盼望；新约：律法写在心上、罪得赦、真认识神。</p></div>
+      <div class="book-col christ"><strong>基督指向</strong><p>新约在主的晚餐中宣告成就（路 22；来 8–10）；义人受害、被弃的先知道路预表；哀歌中的「忠心」指向更美的安慰者。</p></div>
+      <div class="book-col apply"><strong>应用</strong><p>勇气讲真理；为罪哀哭而非犬儒；在教会衰微时抓紧新约应许；拒绝廉价恩典式的「平安了」。</p></div>
+    </div>
+  </details>
+
+  <details class="fold">
+    <summary>以西结书 — 荣耀离殿与新心新灵</summary>
+    <div class="fold-body book-study">
+      <div class="book-col bg"><strong>背景</strong><p>祭司以西结在巴比伦被掳群体中说预言；与耶利米同期而地点不同。异象鲜明、符号强烈。</p></div>
+      <div class="book-col purpose"><strong>写作目的</strong><p>解释圣殿被毁并非神失败，乃因荣耀因罪离开；又应许新心、新灵与终极同在。</p></div>
+      <div class="book-col outline"><strong>内容提纲</strong><p>1–3 异象与守望者；4–24 对耶路撒冷的审判；25–32 列国；33–39 复兴、干骨、合一；40–48 圣殿异象与耶和华沙玛。</p></div>
+      <div class="book-col theology"><strong>神学核心</strong><p>神的荣耀与圣洁；个人责任（结 18）；守望者职分；新心新灵（36）；死人复活式的复兴（37）。</p></div>
+      <div class="book-col christ"><strong>基督指向</strong><p>真牧人（结 34；约 10）；圣灵浇灌与新心；圣殿异象终极指向神与羔羊的同在（启 21–22），而非鼓励投机重建蓝图。</p></div>
+      <div class="book-col apply"><strong>应用</strong><p>作忠心守望者；承认罪导致「荣光离开」；求新心；牧养仿效好牧人。</p></div>
+    </div>
+  </details>
+
+  <details class="fold">
+    <summary>但以理书 — 帝国中的主权与人子</summary>
+    <div class="fold-body book-study">
+      <div class="book-col bg"><strong>背景</strong><p>被掳至波斯初期；但以理在异邦宫廷事奉。书分叙事（1–6）与异象（7–12）；以希伯来文/亚兰文写成。</p></div>
+      <div class="book-col purpose"><strong>写作目的</strong><p>坚固被掳与受压的圣徒：地上帝国更迭，至高者掌权；终必有人子得国，忠信者复活得光。</p></div>
+      <div class="book-col outline"><strong>内容提纲</strong><p>1 智慧与分别；2 大人像；3 火窑；4–5 狂傲之王；6 狮坑；7 四兽与人子；8–9 公绵羊、七十个七；10–12 末时争战与复活。</p></div>
+      <div class="book-col theology"><strong>神学核心</strong><p>神的国超越帝国；敬虔抗拒同化；启示与智慧；末世逼迫与坚忍；死人复活。</p></div>
+      <div class="book-col christ"><strong>基督指向</strong><p>人子驾云得权柄（但 7:13–14；可 14:62）；石头打砸国像（但 2）；七十个七指向弥赛亚受膏与赎罪（谨慎释经，以基督为中心）。</p></div>
+      <div class="book-col apply"><strong>应用</strong><p>在世俗体制中持守敬拜与圣洁；不向偶像屈膝；以盼望韧性面对逼迫；拒绝把但以理当作纯政治预测手册。</p></div>
+    </div>
+  </details>
+
+  <details class="fold">
+    <summary>大先知一句话速记</summary>
     <div class="fold-body">
       <ul>
-        <li><strong>以赛亚</strong>：圣洁之王、余民、仆人之歌、新出埃及；基督是童女所生的以马内利与受苦仆人。</li>
-        <li><strong>耶利米 / 哀歌</strong>：拆毁与建立；新约应许（耶 31）；为罪哀哭。</li>
-        <li><strong>以西结</strong>：神荣耀离殿与归回；新心新灵；异象中的圣殿指向终极同在。</li>
-        <li><strong>但以理</strong>：帝国更迭中神掌权；人子得国；逼迫中的忠信——末世论关键。</li>
+        <li><strong>以赛亚</strong>：圣洁之王 + 受苦仆人 + 新创造。</li>
+        <li><strong>耶利米 / 哀歌</strong>：拆毁与建立 + 新约 + 在废墟中仰望慈爱。</li>
+        <li><strong>以西结</strong>：荣耀离殿与归回 + 新心新灵 + 耶和华沙玛。</li>
+        <li><strong>但以理</strong>：至高者掌权 + 人子得国 + 逼迫中的忠信。</li>
       </ul>
     </div>
   </details>
   <details class="fold">
     <summary>十二小先知 — 速览表</summary>
     <div class="fold-body">
-      <div class="table-wrap">
+      <div class="table-wrap table-scroll">
         <table>
           <thead><tr><th>书卷</th><th>对象/背景</th><th>信息核心</th></tr></thead>
           <tbody>
@@ -551,7 +692,7 @@ mindmap
   </figure>
 
   <h3 id="sec-6-united">联合王国诸王</h3>
-  <div class="table-wrap">
+  <div class="table-wrap table-scroll">
     <table>
       <thead>
         <tr><th>王</th><th>约略年代（主前）</th><th>评价要点</th><th>关键事件</th></tr>
@@ -600,38 +741,103 @@ flowchart TB
     </pre>
   </div>
 
-  <h3 id="sec-6-north">北国以色列主要王与先知对照</h3>
-  <div class="table-wrap">
+  <h3 id="sec-6-north">北国以色列诸王与先知对照</h3>
+  <p>北国约 209 年（931–722），<strong>无一王除去金牛犊</strong>。记忆口诀：<em>耶牛开路 · 暗利建城 · 亚哈巴力 · 耶户半改 · 二世虚荣 · 何细亚亡</em>。</p>
+  <div class="table-wrap table-scroll">
     <table>
       <thead>
-        <tr><th>王（选）</th><th>特征</th><th>同时代先知（约）</th><th>节点</th></tr>
+        <tr><th>王</th><th>约略年代</th><th>评价</th><th>关键先知</th><th>关键事件 / 因果</th></tr>
       </thead>
       <tbody>
-        <tr><td>耶罗波安一世 <span class="badge badge-north">北</span></td><td><span class="badge badge-bad">恶</span> 金牛犊</td><td>神人（王上 13）</td><td>立国即立偶像体制</td></tr>
-        <tr><td>亚哈 <span class="badge badge-north">北</span></td><td><span class="badge badge-bad">恶</span> 巴力崇拜</td><td><strong>以利亚、米该雅</strong></td><td>与耶洗别；迦密山</td></tr>
-        <tr><td>耶户 <span class="badge badge-north">北</span></td><td><span class="badge badge-mixed">除巴力仍留牛犊</span></td><td>以利沙时代余波</td><td>激烈改革却不彻底</td></tr>
-        <tr><td>耶罗波安二世 <span class="badge badge-north">北</span></td><td>国势强却道德败坏</td><td><strong>阿摩司、何西阿</strong></td><td>繁荣下的审判信息</td></tr>
-        <tr><td>何细亚（末王）</td><td><span class="badge badge-bad">恶</span></td><td>何西阿后期</td><td class="year">722 亡国</td></tr>
+        <tr><td>耶罗波安一世 <span class="badge badge-north">北</span></td><td class="year">931–910</td><td><span class="badge badge-bad">恶</span></td><td>神人（王上 13）；亚希雅</td><td>怕民上耶路撒冷 → 设金牛犊于伯特利与但；成「使以色列犯罪」的原型</td></tr>
+        <tr><td>拿答 → 巴沙等</td><td class="year">动荡</td><td><span class="badge badge-bad">恶</span></td><td>—</td><td>政变频繁；巴沙灭耶罗波安家，仍行牛犊之路</td></tr>
+        <tr><td>暗利 <span class="badge badge-north">北</span></td><td class="year">约 885–874</td><td><span class="badge badge-bad">恶</span></td><td>—</td><td>建撒玛利亚为都；政治强、灵性恶；亚述碑文亦提「暗利之国」</td></tr>
+        <tr><td>亚哈 <span class="badge badge-north">北</span></td><td class="year">约 874–853</td><td><span class="badge badge-bad">极恶</span></td><td><strong>以利亚、米该雅</strong></td><td>娶耶洗别；国家化巴力崇拜；拿伯葡萄园；迦密山对决</td></tr>
+        <tr><td>亚哈谢、约兰</td><td class="year">约 853–841</td><td><span class="badge badge-bad">恶</span></td><td><strong>以利沙</strong></td><td>以利沙事工；与犹大联合；仍拜偶像</td></tr>
+        <tr><td>耶户 <span class="badge badge-north">北</span></td><td class="year">约 841–814</td><td><span class="badge badge-mixed">半改</span></td><td>以利沙膏立</td><td>灭亚哈家与巴力，却<strong>不离金牛犊</strong>——改革不彻底的典型</td></tr>
+        <tr><td>耶罗波安二世 <span class="badge badge-north">北</span></td><td class="year">约 793–753</td><td>国强心恶</td><td><strong>阿摩司、何西阿</strong></td><td>疆域近所罗门盛时；社会不公与祭仪虚伪 → 先知猛烈警告</td></tr>
+        <tr><td>末段诸王至何细亚</td><td class="year">至 722</td><td><span class="badge badge-bad">恶</span></td><td>何西阿后期</td><td>政变、向亚述进贡又反叛；撒玛利亚陷落，民被迁徙</td></tr>
       </tbody>
     </table>
   </div>
+  <div class="motto">
+    <div class="motto-text">北国公式：金牛犊不拆 = 偶像体制永续 = 722 亚述收场</div>
+    <div class="motto-hint">不是「运气不好」，而是申命记咒诅在历史中兑现（王下 17 有神学总结）。</div>
+  </div>
 
-  <h3 id="sec-6-south">南国犹大主要王与先知对照</h3>
-  <div class="table-wrap">
+  <h3 id="sec-6-south">南国犹大诸王与先知对照</h3>
+  <p>南国约 345 年（931–586），有大卫之约与圣殿，故有多次复兴，却最终仍亡于巴比伦。记忆口诀：<em>罗波安裂 · 亚撒约沙法 · 亚哈斯投亚述 · 希西家蒙救 · 玛拿西填满 · 约西亚太迟 · 五八六城破</em>。</p>
+  <div class="table-wrap table-scroll">
     <table>
       <thead>
-        <tr><th>王（选）</th><th>特征</th><th>同时代先知（约）</th><th>节点</th></tr>
+        <tr><th>王</th><th>约略年代</th><th>评价</th><th>关键先知</th><th>关键事件 / 因果</th></tr>
       </thead>
       <tbody>
-        <tr><td>罗波安 <span class="badge badge-south">南</span></td><td><span class="badge badge-mixed">时悖逆</span></td><td>—</td><td>分裂之年</td></tr>
-        <tr><td>亚撒、约沙法</td><td><span class="badge badge-good">改革</span></td><td>—</td><td>除偶像、寻求神</td></tr>
-        <tr><td>亚哈斯</td><td><span class="badge badge-bad">恶</span> 投靠亚述</td><td><strong>以赛亚、弥迦</strong></td><td>以马内利信息背景</td></tr>
-        <tr><td>希西家</td><td><span class="badge badge-good">敬虔改革</span></td><td>以赛亚</td><td>亚述围城；神拯救</td></tr>
-        <tr><td>玛拿西</td><td><span class="badge badge-bad">极恶</span>（后或悔改，代下）</td><td>—</td><td>罪贯满盈的转折</td></tr>
-        <tr><td>约西亚</td><td><span class="badge badge-good">大复兴</span></td><td>耶利米初年、西番雅、那鸿</td><td>寻获律法书；仍难挽回判决</td></tr>
-        <tr><td>西底家（末王）</td><td><span class="badge badge-bad">恶</span></td><td><strong>耶利米、以西结</strong></td><td class="year">586 城破殿毁</td></tr>
+        <tr><td>罗波安 <span class="badge badge-south">南</span></td><td class="year">931–913</td><td><span class="badge badge-mixed">混合</span></td><td>—</td><td>加重轭 → 分裂；后有悔意仍失十支派</td></tr>
+        <tr><td>亚撒 <span class="badge badge-south">南</span></td><td class="year">约 911–870</td><td><span class="badge badge-good">改革</span></td><td>—</td><td>除偶像、靠神胜过古实；晚年求医不求神（警戒）</td></tr>
+        <tr><td>约沙法 <span class="badge badge-south">南</span></td><td class="year">约 870–848</td><td><span class="badge badge-good">改革</span></td><td>—</td><td>推广律法教导；却与亚哈家联姻（留下祸根）</td></tr>
+        <tr><td>约阿施、亚玛谢、乌西雅等</td><td class="year">约 9–8 世纪</td><td><span class="badge badge-mixed">时好时坏</span></td><td>约珥？（传统）；后有以赛亚呼召年</td><td>中兴与骄傲并存；乌西雅长大麻风</td></tr>
+        <tr><td>亚哈斯 <span class="badge badge-south">南</span></td><td class="year">约 735–715</td><td><span class="badge badge-bad">恶</span></td><td><strong>以赛亚、弥迦</strong></td><td>拒信以马内利信息，投靠亚述；引进外邦祭坛</td></tr>
+        <tr><td>希西家 <span class="badge badge-south">南</span></td><td class="year">约 715–686</td><td><span class="badge badge-good">大改革</span></td><td>以赛亚</td><td>洁净圣殿；亚述围城蒙神拯救；晚年显宝与巴比伦使节（埋伏笔）</td></tr>
+        <tr><td>玛拿西 <span class="badge badge-south">南</span></td><td class="year">约 686–642</td><td><span class="badge badge-bad">极恶</span></td><td>—</td><td>血腥偶像、使犹大行恶超乎列邦；代下记其被掳后悔改——仍难消群体罪债</td></tr>
+        <tr><td>约西亚 <span class="badge badge-south">南</span></td><td class="year">约 640–609</td><td><span class="badge badge-good">大复兴</span></td><td>耶利米初年、西番雅、那鸿</td><td>寻获律法书、守逾越节；战死米吉多；改革美却「来得太迟」难挽回判决</td></tr>
+        <tr><td>约雅敬、约雅斤、西底家</td><td class="year">至 586</td><td><span class="badge badge-bad">恶</span></td><td><strong>耶利米、以西结、但以理</strong>（被掳）</td><td>三次被掳浪潮；586 城破殿毁，大卫王朝转入「等待弥赛亚」</td></tr>
       </tbody>
     </table>
+  </div>
+  <div class="motto">
+    <div class="motto-text">南国公式：偶有明君复兴 ≠ 可替代完美之王；灯火不灭指向基督</div>
+    <div class="motto-hint">好王是恩典插曲；亡国显明人君不能救——需要更大的大卫子孙。</div>
+  </div>
+
+  <h3 id="sec-6-exile">被掳因果：为何亡国？为何还有盼望？</h3>
+  <div class="cause-effect">
+    <div class="ce-box cause">
+      <h4>原因（约的咒诅展开）</h4>
+      <ul class="mb-0">
+        <li>拜偶像与混杂敬拜（金牛犊、巴力、星象、儿童献祭）</li>
+        <li>拒绝先知、杀害义人、假平安信息</li>
+        <li>社会不公：欺压穷人、贿赂、形式祭仪（阿摩司、弥迦）</li>
+        <li>政治上投靠列强而非投靠耶和华（亚哈斯、末代诸王）</li>
+        <li>律法书被遗忘；约的条款被践踏（对照申 28–32；王下 17）</li>
+      </ul>
+    </div>
+    <div class="ce-box effect">
+      <h4>结果（历史中的执行）</h4>
+      <ul class="mb-0">
+        <li>722：北国亡于亚述，民被迁徙、混杂</li>
+        <li>605 / 597 / 586：南国分批被掳巴比伦</li>
+        <li>圣殿焚毁、君王被擒、地土安息</li>
+        <li>外表「神的同在」符号尽失——为要显明罪的严重</li>
+        <li>同时：余民被保守，谱系与应许未断</li>
+      </ul>
+    </div>
+    <div class="ce-box hope">
+      <h4>盼望（恩典余民与弥赛亚）</h4>
+      <p class="mb-0">被掳不是终局：耶 31 新约、结 36 新心、赛 40–55 安慰与仆人、但 7 人子得国。538 古列诏令开启归回（建殿、重建群体），却仍等待道成肉身——归回是「小复活」，基督是「真归回与真圣殿」。</p>
+    </div>
+  </div>
+
+  <h3 id="sec-6-exile-christ">被掳 → 归回 → 基督（Mermaid）</h3>
+  <div class="mermaid-wrap diagram-scroll">
+    <pre class="mermaid">
+flowchart LR
+  SIN[违约拜偶像] --> EX[被掳
+722 / 586]
+  EX --> REM[余民被保守]
+  REM --> RET[归回重建
+538–445]
+  RET --> WAIT[两约之间
+弥赛亚期待]
+  WAIT --> CHR[基督降临
+真圣殿·新约]
+  CHR --> CHU[教会宣教]
+  CHU --> NEW[新天新地
+终极归回]
+  style EX fill:#c45c5c,color:#fff
+  style CHR fill:#c9a227,color:#0b1220
+  style NEW fill:#3d9a6a,color:#fff
+    </pre>
   </div>
 
   <h3 id="sec-6-memory">关键节点记忆卡</h3>
@@ -669,12 +875,12 @@ flowchart TB
   <details class="fold" open>
     <summary>马太福音 — 弥赛亚君王与天国</summary>
     <div class="fold-body book-study">
-      <div class="book-col bg"><strong>背景</strong><p>面向熟稔旧约的读者；强调应验。</p></div>
-      <div class="book-col purpose"><strong>写作目的</strong><p>证明耶稣是大卫子孙、亚伯拉罕的后裔，天国之王。</p></div>
-      <div class="book-col outline"><strong>内容提纲</strong><p>诞生与预备；五段讲论（山训等）；受难复活；大使命。</p></div>
-      <div class="book-col theology"><strong>神学核心</strong><p>天国伦理；教会权柄；旧约应验。</p></div>
-      <div class="book-col christ"><strong>基督指向</strong><p>以马内利；好牧人；被交权柄的人子。</p></div>
-      <div class="book-col apply"><strong>应用</strong><p>作门徒、遵守、教导；天国优先于地上忧虑。</p></div>
+      <div class="book-col bg"><strong>背景</strong><p>很可能面向熟稔旧约的犹太基督徒群体；频繁「这是要应验」。耶稣为大卫子孙与亚伯拉罕后裔（太 1）。</p></div>
+      <div class="book-col purpose"><strong>写作目的</strong><p>证明耶稣是应许的弥赛亚君王；教导天国门徒伦理；托付教会使万民作门徒。</p></div>
+      <div class="book-col outline"><strong>内容提纲</strong><p>1–2 谱系与诞生；3–7 预备与登山宝训；8–10 神迹与差遣；11–13 争议与天国比喻；14–18 教会与饶恕；19–25 往耶路撒冷与末世讲论；26–28 受难、复活、大使命。</p></div>
+      <div class="book-col theology"><strong>神学核心</strong><p>天国已近；义超过文士；教会的钥匙与纪律（16、18）；外邦人同蒙恩；登山宝训是国度宪章而非自救阶梯。</p></div>
+      <div class="book-col christ"><strong>基督指向</strong><p>整卷即基督论：以马内利、真以色列、更大的摩西与圣殿、人子得权柄、十架与复活的王。</p></div>
+      <div class="book-col apply"><strong>应用</strong><p>先求神的国；作门徒而非仅「慕道消费者」；教会生活有实质权柄与饶恕；宣教直到地极。</p></div>
     </div>
   </details>
   <details class="fold">
@@ -702,12 +908,12 @@ flowchart TB
   <details class="fold">
     <summary>约翰福音 — 神子与永生</summary>
     <div class="fold-body book-study">
-      <div class="book-col bg"><strong>背景</strong><p>较独立的传统；深刻基督论。</p></div>
-      <div class="book-col purpose"><strong>写作目的</strong><p>信耶稣是基督、神之子，因信得生命（约 20:31）。</p></div>
-      <div class="book-col outline"><strong>内容提纲</strong><p>序言；七神迹/七「我是」；高举的十架；复活显现。</p></div>
-      <div class="book-col theology"><strong>神学核心</strong><p>道成肉身；三位一体暗示；信心与所见。</p></div>
-      <div class="book-col christ"><strong>基督指向</strong><p>整卷即基督论高峰；逾越节羔羊。</p></div>
-      <div class="book-col apply"><strong>应用</strong><p>真信心；住在葡萄树上；彼此相爱。</p></div>
+      <div class="book-col bg"><strong>背景</strong><p>与对观福音互补；可能面向更广的读者，含犹太与希腊背景；强调见证、认罪信与反诺斯底式否认肉身的倾向。</p></div>
+      <div class="book-col purpose"><strong>写作目的</strong><p>「要叫你们信耶稣是基督，是神的儿子，并且叫你们信了祂，就可以因祂的名得生命」（约 20:31）。</p></div>
+      <div class="book-col outline"><strong>内容提纲</strong><p>1 道成肉身序言；2–12 公开事工（神迹与对话）；13–17 楼房讲论与大祭司祷告；18–19 受难；20–21 复活与牧养彼得。</p></div>
+      <div class="book-col theology"><strong>神学核心</strong><p>道与神同在且就是神；七个神迹为「记号」；七「我是」；从上头生；真理与自由；圣灵保惠师；荣耀的十架被「高举」。</p></div>
+      <div class="book-col christ"><strong>基督指向</strong><p>全书即基督论：真殿、铜蛇、生命粮、好牧人、复活、道路真理生命、真葡萄树、逾越节羔羊。</p></div>
+      <div class="book-col apply"><strong>应用</strong><p>来就近得生命；住在主里面结果子；以洗脚式的爱彼此服事；护卫道成肉身的正统（比对尼西亚）。</p></div>
     </div>
   </details>
 
@@ -724,8 +930,52 @@ flowchart TB
     </div>
   </details>
 
-  <h3 id="sec-7-epistles">书信要点</h3>
-  <div class="table-wrap">
+  <h3 id="sec-7-flow">福音 → 行传 → 书信（Mermaid）</h3>
+  <p>新约正典不是杂文集：先是基督的作为与教训，再是圣灵推进的宣教史，然后是使徒书信把福音应用于教会生活与教义澄清，终以启示录敬拜收束。</p>
+  <div class="mermaid-wrap diagram-scroll">
+    <pre class="mermaid">
+flowchart LR
+  G[四福音
+基督的位格与事工] --> A[使徒行传
+圣灵与宣教]
+  A --> E[书信
+教义与教会生活]
+  E --> R[启示录
+敬拜与终末得胜]
+  G -.应验旧约.-> OT[律法·先知·圣卷]
+  style G fill:#c9a227,color:#0b1220
+  style R fill:#3d9a6a,color:#fff
+    </pre>
+  </div>
+
+  <h3 id="sec-7-romans">罗马书 — 福音的系统陈明</h3>
+  <details class="fold">
+    <summary>罗马书 — 因信称义与新生活</summary>
+    <div class="fold-body book-study">
+      <div class="book-col bg"><strong>背景</strong><p>保罗约在哥林多写成，致罗马教会；犹太与外邦信徒同在一个身体里，需澄清福音。</p></div>
+      <div class="book-col purpose"><strong>写作目的</strong><p>完整陈明神的福音：罪人如何被称义、成圣、得荣耀；以色列在计划中的位置；信徒的献上与相爱。</p></div>
+      <div class="book-col outline"><strong>内容提纲</strong><p>1–3 普世罪责；3–5 因信称义与亚当/基督；6–8 与罪死、在灵里活；9–11 以色列与外邦；12–16 合理的事奉与教会伦理。</p></div>
+      <div class="book-col theology"><strong>神学核心</strong><p>神的义在福音上显明；称义是法庭性宣告；原罪与归算；光照的信心；圣灵保惠与代求；拣选与怜悯（多特可对照）。</p></div>
+      <div class="book-col christ"><strong>基督指向</strong><p>挽回祭（3:25）；末后亚当；为我们的过犯交付、为我们的称义复活（4:25）；不可隔绝的爱（8）。</p></div>
+      <div class="book-col apply"><strong>应用</strong><p>停止靠行为夸口；以信心安息；以身体作活祭；在教会中按恩赐服事；对以色列与宣教有负担。</p></div>
+    </div>
+  </details>
+
+  <h3 id="sec-7-hebrews">希伯来书 — 更美之约与坚忍</h3>
+  <details class="fold">
+    <summary>希伯来书 — 影儿与实体</summary>
+    <div class="fold-body book-study">
+      <div class="book-col bg"><strong>背景</strong><p>收信人熟稔旧约敬拜，面临逼迫与「退回」旧制度的试探；作者匿名，论证极具旧约素养。</p></div>
+      <div class="book-col purpose"><strong>写作目的</strong><p>证明耶稣超越天使、摩西、祭司与旧祭：要持定告白，不可忽略这么大的救恩。</p></div>
+      <div class="book-col outline"><strong>内容提纲</strong><p>1–2 圣子超越天使；3–4 比摩西更大、真安息；5–7 麦基洗德等次大祭司；8–10 新约与一次献祭；11–13 信心榜样、管教、敬拜与伦理。</p></div>
+      <div class="book-col theology"><strong>神学核心</strong><p>预表与实体；一次永远有效的祭；信心是对未见之事的把握；警戒与应许并存；天上敬拜。</p></div>
+      <div class="book-col christ"><strong>基督指向</strong><p>全书中心：为我们进入至圣所的大祭司；新约中保；创始成终的耶稣。</p></div>
+      <div class="book-col apply"><strong>应用</strong><p>不可冷淡退缩；常常坦然进入至圣所；彼此劝勉聚会；外面带着祂的凌辱，心里有坚固城。</p></div>
+    </div>
+  </details>
+
+  <h3 id="sec-7-epistles">书信要点总表</h3>
+  <div class="table-wrap table-scroll">
     <table>
       <thead><tr><th>书信群</th><th>代表</th><th>改革宗关注焦点</th></tr></thead>
       <tbody>
@@ -765,12 +1015,12 @@ flowchart TB
   <details class="fold">
     <summary>启示录 — 六栏精要</summary>
     <div class="fold-body book-study">
-      <div class="book-col bg"><strong>背景</strong><p>逼迫语境下的七教会；拔摩异象。</p></div>
-      <div class="book-col purpose"><strong>写作目的</strong><p>坚固圣徒：基督作王，恶必败，敬拜神。</p></div>
-      <div class="book-col outline"><strong>内容提纲</strong><p>1–3 教会；4–5 天上宝座；印号碗循环；新耶路撒冷。</p></div>
-      <div class="book-col theology"><strong>神学核心</strong><p>神的主权；圣战；审判与新创造。</p></div>
-      <div class="book-col christ"><strong>基督指向</strong><p>初与终；狮子与羔羊；万王之王。</p></div>
-      <div class="book-col apply"><strong>应用</strong><p>拒绝偶像与淫乱；至死忠心；以敬拜对抗绝望。</p></div>
+      <div class="book-col bg"><strong>背景</strong><p>约翰在拔摩；七教会处于罗马帝国压力与诱惑之下。启示文学大量重用旧约意象（出埃及、但以理、以西结、撒迦利亚）。</p></div>
+      <div class="book-col purpose"><strong>写作目的</strong><p>坚固受试探的圣徒：被杀的羔羊已得胜；敬拜真神、拒绝兽的偶像体系；盼望新天新地。</p></div>
+      <div class="book-col outline"><strong>内容提纲</strong><p>1 人子异象；2–3 七教会书信；4–5 宝座与羔羊配拿书卷；6–16 印、号、碗的审判循环；17–19 大淫妇与最终争战；20–22 千年异象、审判、新耶路撒冷。</p></div>
+      <div class="book-col theology"><strong>神学核心</strong><p>神的主权与羔羊中心；圣徒的见证与忍耐；审判是公义；敬拜对抗偶像；已然得胜、未济成全。</p></div>
+      <div class="book-col christ"><strong>基督指向</strong><p>初与终、死过又活的那位；犹大支派的狮子与被杀羔羊；万王之王；教会的丈夫与灯中行走者。</p></div>
+      <div class="book-col apply"><strong>应用</strong><p>听圣灵向教会所说的话；拒绝淫乱与拜偶像（含现代变形）；至死忠心；以敬拜与盼望对抗恐惧与投机时间表。</p></div>
     </div>
   </details>
 </section>
@@ -814,7 +1064,7 @@ flowchart TB
   </div>
 
   <h3 id="sec-8-use">如何用信条护卫解读（简表）</h3>
-  <div class="table-wrap">
+  <div class="table-wrap table-scroll">
     <table>
       <thead><tr><th>读经难题</th><th>易偏路径</th><th>信条校准</th></tr></thead>
       <tbody>
@@ -834,7 +1084,7 @@ flowchart TB
   <h2 id="sec-9">9. 附录</h2>
 
   <h3 id="sec-9-terms">术语表</h3>
-  <div class="table-wrap">
+  <div class="table-wrap table-scroll">
     <table>
       <thead><tr><th>术语</th><th>简释</th></tr></thead>
       <tbody>
@@ -863,7 +1113,7 @@ flowchart TB
   </ol>
 
   <h3 id="sec-9-chrono">速查年表</h3>
-  <div class="table-wrap">
+  <div class="table-wrap table-scroll">
     <table>
       <thead><tr><th>年代（主前/后）</th><th>事件</th></tr></thead>
       <tbody>
