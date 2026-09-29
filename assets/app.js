@@ -1,4 +1,4 @@
-/* Continental Reformed Bible Study — App Logic (dark elegant theme) */
+/* Continental Reformed Bible Study — App Logic (premium dark elegant) */
 (function () {
   "use strict";
 
@@ -137,7 +137,7 @@
     }
 
     if (!headingEls.length) return;
-    const offset = (parseInt(getComputedStyle(document.documentElement).getPropertyValue("--header-h"), 10) || 56) + 24;
+    const offset = (parseInt(getComputedStyle(document.documentElement).getPropertyValue("--header-h"), 10) || 64) + 24;
     let current = headingEls[0];
     for (const h of headingEls) {
       if (h.getBoundingClientRect().top <= offset) current = h;
@@ -175,38 +175,89 @@
     document.querySelectorAll("details.fold").forEach((d) => { d.open = false; });
   });
 
-  /* —— Init Mermaid (dark elegant) —— */
+  /* —— High-contrast Mermaid theme (cream/gold nodes, dark text, gold edges) —— */
+  const MERMAID_THEME = {
+    darkMode: false,
+    background: "#0f1a2c",
+    primaryColor: "#f5e6c4",
+    primaryTextColor: "#1a1a1a",
+    primaryBorderColor: "#d4af37",
+    secondaryColor: "#e8d5a3",
+    tertiaryColor: "#1e3a5f",
+    secondaryTextColor: "#1a1a1a",
+    tertiaryTextColor: "#f0d878",
+    lineColor: "#d4af37",
+    textColor: "#1a1a1a",
+    mainBkg: "#f5e6c4",
+    nodeBorder: "#c9a227",
+    clusterBkg: "#152238",
+    clusterBorder: "#c9a227",
+    titleColor: "#f0d878",
+    edgeLabelBackground: "#f5e6c4",
+    nodeTextColor: "#1a1a1a",
+    fontFamily: "system-ui, Noto Sans SC, sans-serif",
+    fontSize: "16px",
+  };
+
+  function forceMermaidContrast() {
+    document.querySelectorAll(".mermaid svg").forEach((svg) => {
+      svg.querySelectorAll(".node rect, .node polygon, .node circle, .node path").forEach((el) => {
+        const fill = (el.getAttribute("fill") || "").toLowerCase();
+        if (!fill || fill === "none" || fill === "#0f172a" || fill === "#152238" || fill === "#1a2b45" || fill === "#1e334f") {
+          el.setAttribute("fill", "#f5e6c4");
+        }
+        if (!el.getAttribute("stroke") || el.getAttribute("stroke") === "none") {
+          el.setAttribute("stroke", "#d4af37");
+        }
+      });
+      svg.querySelectorAll("text, .nodeLabel, tspan").forEach((el) => {
+        el.setAttribute("fill", "#1a1a1a");
+        if (el.style) el.style.color = "#1a1a1a";
+      });
+      svg.querySelectorAll("foreignObject div, foreignObject span, foreignObject p").forEach((el) => {
+        el.style.color = "#1a1a1a";
+      });
+      svg.querySelectorAll(".edgePath path, .flowchart-link").forEach((el) => {
+        el.setAttribute("stroke", "#d4af37");
+      });
+      svg.querySelectorAll(".marker, defs marker path").forEach((el) => {
+        el.setAttribute("fill", "#d4af37");
+        el.setAttribute("stroke", "#d4af37");
+      });
+    });
+  }
+
   function initMermaid() {
-    if (typeof mermaid === "undefined") return;
+    if (typeof mermaid === "undefined") {
+      setTimeout(initMermaid, 80);
+      return;
+    }
+    // Re-init after theme so every diagram picks up high-contrast vars
     mermaid.initialize({
       startOnLoad: false,
-      theme: "dark",
-      themeVariables: {
-        darkMode: true,
-        background: "#152238",
-        primaryColor: "#1a2b45",
-        primaryTextColor: "#e8e4d9",
-        primaryBorderColor: "#d4af37",
-        secondaryColor: "#0f172a",
-        tertiaryColor: "#1e334f",
-        lineColor: "#d4af37",
-        textColor: "#e8e4d9",
-        mainBkg: "#1a2b45",
-        nodeBorder: "#c9a227",
-        clusterBkg: "#152238",
-        clusterBorder: "#2a3f5f",
-        titleColor: "#f0d878",
-        edgeLabelBackground: "#152238",
-        nodeTextColor: "#e8e4d9",
-        fontFamily: "system-ui, Noto Sans SC, sans-serif",
+      theme: "base",
+      themeVariables: MERMAID_THEME,
+      flowchart: {
+        curve: "basis",
+        padding: 14,
+        useMaxWidth: true,
+        htmlLabels: true,
+        nodeSpacing: 28,
+        rankSpacing: 36,
       },
-      flowchart: { curve: "basis", padding: 12, useMaxWidth: true, htmlLabels: true },
-      mindmap: { useMaxWidth: true },
+      mindmap: { useMaxWidth: true, padding: 12 },
       securityLevel: "loose",
     });
-    mermaid.run({ querySelector: ".mermaid" }).catch((err) => {
-      console.warn("Mermaid render issue:", err);
-    });
+    mermaid.run({ querySelector: ".mermaid" })
+      .then(() => {
+        forceMermaidContrast();
+        // Second pass after layout settles
+        setTimeout(forceMermaidContrast, 120);
+      })
+      .catch((err) => {
+        console.warn("Mermaid render issue:", err);
+        forceMermaidContrast();
+      });
   }
 
   /* —— Wrap mermaid after render for scroll safety —— */
