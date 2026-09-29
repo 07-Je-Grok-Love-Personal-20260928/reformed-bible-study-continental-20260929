@@ -67,3 +67,10 @@ python3 -m http.server 3456
 教学与教会内部学习使用。圣经经文请使用您已获授权的译本。年代数字多为教学常用概数。
 
 Soli Deo Gloria
+
+## 在线地址
+
+- GitHub 仓库：https://github.com/07-Je-Grok-Love-Personal-20260928/bible-study-reformed
+- GitHub Pages：https://07-je-grok-love-personal-20260928.github.io/bible-study-reformed/
+- Surge / Netlify：部署完成后补充
+
