@@ -1,4 +1,4 @@
-/* Continental Reformed Bible Study — App Logic (light theme) */
+/* Continental Reformed Bible Study — App Logic (dark elegant theme) */
 (function () {
   "use strict";
 
@@ -167,36 +167,38 @@
     window.scrollTo({ top: 0, behavior: scrollBehavior() });
   });
 
-  /* —— Expand / collapse appendix details only —— */
+  /* —— Expand / collapse ALL folds —— */
   document.getElementById("expand-all")?.addEventListener("click", () => {
-    document.querySelectorAll("details.fold.appendix").forEach((d) => { d.open = true; });
+    document.querySelectorAll("details.fold").forEach((d) => { d.open = true; });
   });
   document.getElementById("collapse-all")?.addEventListener("click", () => {
-    document.querySelectorAll("details.fold.appendix").forEach((d) => { d.open = false; });
+    document.querySelectorAll("details.fold").forEach((d) => { d.open = false; });
   });
 
-  /* —— Init Mermaid (light theme) —— */
+  /* —— Init Mermaid (dark elegant) —— */
   function initMermaid() {
     if (typeof mermaid === "undefined") return;
     mermaid.initialize({
       startOnLoad: false,
-      theme: "base",
+      theme: "dark",
       themeVariables: {
-        primaryColor: "#e8efe9",
-        primaryTextColor: "#2c3338",
-        primaryBorderColor: "#5a6b5d",
-        lineColor: "#5a7a9a",
-        secondaryColor: "#f7f3eb",
-        tertiaryColor: "#fffcf7",
-        background: "#fffcf7",
-        mainBkg: "#e8efe9",
-        nodeBorder: "#5a6b5d",
-        clusterBkg: "#f3efe6",
-        titleColor: "#2c3338",
-        edgeLabelBackground: "#fffcf7",
+        darkMode: true,
+        background: "#152238",
+        primaryColor: "#1a2b45",
+        primaryTextColor: "#e8e4d9",
+        primaryBorderColor: "#d4af37",
+        secondaryColor: "#0f172a",
+        tertiaryColor: "#1e334f",
+        lineColor: "#d4af37",
+        textColor: "#e8e4d9",
+        mainBkg: "#1a2b45",
+        nodeBorder: "#c9a227",
+        clusterBkg: "#152238",
+        clusterBorder: "#2a3f5f",
+        titleColor: "#f0d878",
+        edgeLabelBackground: "#152238",
+        nodeTextColor: "#e8e4d9",
         fontFamily: "system-ui, Noto Sans SC, sans-serif",
-        textColor: "#2c3338",
-        nodeTextColor: "#2c3338",
       },
       flowchart: { curve: "basis", padding: 12, useMaxWidth: true, htmlLabels: true },
       mindmap: { useMaxWidth: true },
