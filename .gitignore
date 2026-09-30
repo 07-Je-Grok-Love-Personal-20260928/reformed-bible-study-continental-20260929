@@ -6,3 +6,5 @@ CNAME
 
 # Local Netlify folder
 .netlify
+
+_build/
