@@ -209,7 +209,7 @@
     document.getElementById(id)?.addEventListener("click", () => setAllFolds(false));
   });
 
-  /* —— High-contrast Mermaid theme (cream/gold nodes, dark text, gold edges) —— */
+  /* —— High-contrast Mermaid theme (multi-color mindmap branches, dark text) —— */
   const MERMAID_THEME = {
     darkMode: false,
     background: "#0f1a2c",
@@ -231,52 +231,72 @@
     nodeTextColor: "#1a1a1a",
     fontFamily: "system-ui, Noto Sans SC, sans-serif",
     fontSize: "16px",
-    /* Mindmap section palette (cScale / git*) — cream fills, dark labels, gold lines */
+    /* Mindmap section palette — chip colors: gold/blue/purple/green/teal/rose/amber */
     git0: "#f0d878",
     gitBranchLabel0: "#1a1a1a",
-    git1: "#f5e6c4",
+    git1: "#d6e8f8",
     gitBranchLabel1: "#1a1a1a",
-    git2: "#e8d5a3",
+    git2: "#e6dcf5",
     gitBranchLabel2: "#1a1a1a",
-    git3: "#fff8e7",
+    git3: "#d4eedf",
     gitBranchLabel3: "#1a1a1a",
     cScale0: "#f5e6c4",
     cScaleLabel0: "#1a1a1a",
     cScaleInv0: "#d4af37",
-    cScale1: "#fff8e7",
+    cScale1: "#d6e8f8",
     cScaleLabel1: "#1a1a1a",
-    cScaleInv1: "#d4af37",
-    cScale2: "#e8d5a3",
+    cScaleInv1: "#6ba3e0",
+    cScale2: "#e6dcf5",
     cScaleLabel2: "#1a1a1a",
-    cScaleInv2: "#d4af37",
-    cScale3: "#f0d878",
+    cScaleInv2: "#b39ddb",
+    cScale3: "#d4eedf",
     cScaleLabel3: "#1a1a1a",
-    cScaleInv3: "#d4af37",
-    cScale4: "#f7e9c8",
+    cScaleInv3: "#3d9a6a",
+    cScale4: "#d4f0ee",
     cScaleLabel4: "#1a1a1a",
-    cScaleInv4: "#d4af37",
-    cScale5: "#ffe9b8",
+    cScaleInv4: "#5ec4c0",
+    cScale5: "#f5d6d6",
     cScaleLabel5: "#1a1a1a",
-    cScaleInv5: "#d4af37",
-    cScale6: "#f5e6c4",
+    cScaleInv5: "#c45c5c",
+    cScale6: "#f5e0c8",
     cScaleLabel6: "#1a1a1a",
-    cScaleInv6: "#d4af37",
-    cScale7: "#fff8e7",
+    cScaleInv6: "#e8a85c",
+    cScale7: "#f5e6c4",
     cScaleLabel7: "#1a1a1a",
     cScaleInv7: "#d4af37",
-    cScale8: "#e8d5a3",
+    cScale8: "#d6e8f8",
     cScaleLabel8: "#1a1a1a",
-    cScaleInv8: "#d4af37",
-    cScale9: "#f0d878",
+    cScaleInv8: "#6ba3e0",
+    cScale9: "#e6dcf5",
     cScaleLabel9: "#1a1a1a",
-    cScaleInv9: "#d4af37",
-    cScale10: "#f7e9c8",
+    cScaleInv9: "#b39ddb",
+    cScale10: "#d4eedf",
     cScaleLabel10: "#1a1a1a",
-    cScaleInv10: "#d4af37",
-    cScale11: "#ffe9b8",
+    cScaleInv10: "#3d9a6a",
+    cScale11: "#d4f0ee",
     cScaleLabel11: "#1a1a1a",
-    cScaleInv11: "#d4af37",
+    cScaleInv11: "#5ec4c0",
   };
+
+  const MINDMAP_BRANCH_COLORS = [
+    { fill: "#f5e6c4", stroke: "#d4af37" }, // gold
+    { fill: "#d6e8f8", stroke: "#6ba3e0" }, // blue
+    { fill: "#e6dcf5", stroke: "#b39ddb" }, // purple
+    { fill: "#d4eedf", stroke: "#3d9a6a" }, // green
+    { fill: "#d4f0ee", stroke: "#5ec4c0" }, // teal
+    { fill: "#f5d6d6", stroke: "#c45c5c" }, // rose
+    { fill: "#f5e0c8", stroke: "#e8a85c" }, // amber
+  ];
+  const MINDMAP_ROOT_COLOR = { fill: "#f0d878", stroke: "#c9a227" };
+
+  function mindmapColorForNode(el) {
+    const host = el.closest("[class*=\"section-\"]") || el.parentElement;
+    const cls = (host && host.getAttribute("class")) || el.getAttribute("class") || "";
+    if (/\bsection-root\b/.test(cls)) return MINDMAP_ROOT_COLOR;
+    const m = cls.match(/\bsection-(\d+)\b/);
+    if (m) return MINDMAP_BRANCH_COLORS[Number(m[1]) % MINDMAP_BRANCH_COLORS.length];
+    return MINDMAP_BRANCH_COLORS[0];
+  }
 
   function forceMermaidContrast() {
     document.querySelectorAll(".mermaid svg").forEach((svg) => {
@@ -290,14 +310,14 @@
           el.setAttribute("stroke", "#d4af37");
         }
       });
-      // Mindmap nodes (section-* / section-root) — always cream + gold; root slightly brighter
+      // Mindmap nodes — chip palette by section-N; root stays gold
       svg.querySelectorAll(".mindmap-node rect, .mindmap-node polygon, .mindmap-node circle, .mindmap-node path, [class*=\"section-\"] rect, [class*=\"section-\"] polygon, [class*=\"section-\"] circle, [class*=\"section-\"] path").forEach((el) => {
-        const root = el.closest(".section-root, .mindmap-node.section-root");
-        el.setAttribute("fill", root ? "#f0d878" : "#f5e6c4");
-        el.setAttribute("stroke", root ? "#c9a227" : "#d4af37");
+        const { fill, stroke } = mindmapColorForNode(el);
+        el.setAttribute("fill", fill);
+        el.setAttribute("stroke", stroke);
         if (el.style) {
-          el.style.fill = root ? "#f0d878" : "#f5e6c4";
-          el.style.stroke = root ? "#c9a227" : "#d4af37";
+          el.style.fill = fill;
+          el.style.stroke = stroke;
         }
       });
       svg.querySelectorAll("text, .nodeLabel, tspan, .mindmap-node-label").forEach((el) => {
@@ -308,8 +328,14 @@
         el.style.color = "#1a1a1a";
       });
       svg.querySelectorAll(".edgePath path, .flowchart-link, .mindmap-edges path, .mindmap-edges line, .edge, [class*=\"section-edge-\"]").forEach((el) => {
-        el.setAttribute("stroke", "#d4af37");
-        if (el.style) el.style.stroke = "#d4af37";
+        const host = el.closest("[class*=\"section-edge-\"]") || el;
+        const cls = (host.getAttribute("class") || "") + " " + (el.getAttribute("class") || "");
+        const m = cls.match(/section-edge-(\d+)/);
+        const stroke = m
+          ? MINDMAP_BRANCH_COLORS[Number(m[1]) % MINDMAP_BRANCH_COLORS.length].stroke
+          : "#d4af37";
+        el.setAttribute("stroke", stroke);
+        if (el.style) el.style.stroke = stroke;
       });
       svg.querySelectorAll(".marker, defs marker path").forEach((el) => {
         el.setAttribute("fill", "#d4af37");

@@ -724,9 +724,28 @@ hr {
   border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-/* One-line summary */
-.one-line-section { margin-top: .5rem; }
-.one-line-card { margin: 1rem 0 1.3rem; }
+/* One-line summary — tighter title spacing after hero */
+.one-line-section { margin-top: .35rem; }
+.one-line-card { margin: .85rem 0 1.1rem; }
+.mod-oneline > h2,
+.one-line-section > h2 {
+  margin-top: .15rem;
+  margin-bottom: .75rem;
+  padding-bottom: .4rem;
+}
+.mod-oneline > h2::after,
+.one-line-section > h2::after {
+  margin-top: .35rem;
+}
+.mod-oneline > h3,
+.one-line-section > h3 {
+  margin-top: 1.15rem;
+  margin-bottom: .5rem;
+}
+/* First h2 in any content section: less blank above title */
+.content-inner > section > h2:first-child {
+  margin-top: .15rem;
+}
 .one-line-lead {
   font-family: var(--font-serif);
   font-size: 1.08rem;
@@ -1137,7 +1156,7 @@ td.year { font-family: var(--font-mono); color: var(--accent-soft); white-space:
 .mermaid .flowchart-link {
   stroke: #d4af37 !important;
 }
-/* Mindmap ignores flowchart themeVariables — force navy/gold premium contrast */
+/* Mindmap: multi-color branches matching chip palette (dark text, high contrast) */
 .mermaid .mindmap-node rect,
 .mermaid .mindmap-node circle,
 .mermaid .mindmap-node polygon,
@@ -1145,14 +1164,11 @@ td.year { font-family: var(--font-mono); color: var(--accent-soft); white-space:
 .mermaid [class*="section-"] rect,
 .mermaid [class*="section-"] circle,
 .mermaid [class*="section-"] polygon,
-.mermaid [class*="section-"] path,
-.mermaid .section-root rect,
-.mermaid .section-root circle,
-.mermaid .section-root polygon,
-.mermaid .section-root path {
+.mermaid [class*="section-"] path {
   fill: #f5e6c4 !important;
   stroke: #d4af37 !important;
 }
+/* Root stays gold */
 .mermaid .mindmap-node.section-root rect,
 .mermaid .mindmap-node.section-root circle,
 .mermaid .mindmap-node.section-root polygon,
@@ -1163,6 +1179,55 @@ td.year { font-family: var(--font-mono); color: var(--accent-soft); white-space:
 .mermaid .section-root path {
   fill: #f0d878 !important;
   stroke: #c9a227 !important;
+}
+/* Branch/level fills — gold / blue / purple / green / teal / rose / amber */
+.mermaid .section-0 rect, .mermaid .section-0 circle, .mermaid .section-0 polygon, .mermaid .section-0 path,
+.mermaid .mindmap-node.section-0 rect, .mermaid .mindmap-node.section-0 circle, .mermaid .mindmap-node.section-0 polygon, .mermaid .mindmap-node.section-0 path {
+  fill: #f5e6c4 !important; stroke: #d4af37 !important;
+}
+.mermaid .section-1 rect, .mermaid .section-1 circle, .mermaid .section-1 polygon, .mermaid .section-1 path,
+.mermaid .mindmap-node.section-1 rect, .mermaid .mindmap-node.section-1 circle, .mermaid .mindmap-node.section-1 polygon, .mermaid .mindmap-node.section-1 path {
+  fill: #d6e8f8 !important; stroke: #6ba3e0 !important;
+}
+.mermaid .section-2 rect, .mermaid .section-2 circle, .mermaid .section-2 polygon, .mermaid .section-2 path,
+.mermaid .mindmap-node.section-2 rect, .mermaid .mindmap-node.section-2 circle, .mermaid .mindmap-node.section-2 polygon, .mermaid .mindmap-node.section-2 path {
+  fill: #e6dcf5 !important; stroke: #b39ddb !important;
+}
+.mermaid .section-3 rect, .mermaid .section-3 circle, .mermaid .section-3 polygon, .mermaid .section-3 path,
+.mermaid .mindmap-node.section-3 rect, .mermaid .mindmap-node.section-3 circle, .mermaid .mindmap-node.section-3 polygon, .mermaid .mindmap-node.section-3 path {
+  fill: #d4eedf !important; stroke: #3d9a6a !important;
+}
+.mermaid .section-4 rect, .mermaid .section-4 circle, .mermaid .section-4 polygon, .mermaid .section-4 path,
+.mermaid .mindmap-node.section-4 rect, .mermaid .mindmap-node.section-4 circle, .mermaid .mindmap-node.section-4 polygon, .mermaid .mindmap-node.section-4 path {
+  fill: #d4f0ee !important; stroke: #5ec4c0 !important;
+}
+.mermaid .section-5 rect, .mermaid .section-5 circle, .mermaid .section-5 polygon, .mermaid .section-5 path,
+.mermaid .mindmap-node.section-5 rect, .mermaid .mindmap-node.section-5 circle, .mermaid .mindmap-node.section-5 polygon, .mermaid .mindmap-node.section-5 path {
+  fill: #f5d6d6 !important; stroke: #c45c5c !important;
+}
+.mermaid .section-6 rect, .mermaid .section-6 circle, .mermaid .section-6 polygon, .mermaid .section-6 path,
+.mermaid .mindmap-node.section-6 rect, .mermaid .mindmap-node.section-6 circle, .mermaid .mindmap-node.section-6 polygon, .mermaid .mindmap-node.section-6 path {
+  fill: #f5e0c8 !important; stroke: #e8a85c !important;
+}
+.mermaid .section-7 rect, .mermaid .section-7 circle, .mermaid .section-7 polygon, .mermaid .section-7 path,
+.mermaid .mindmap-node.section-7 rect, .mermaid .mindmap-node.section-7 circle, .mermaid .mindmap-node.section-7 polygon, .mermaid .mindmap-node.section-7 path {
+  fill: #f5e6c4 !important; stroke: #d4af37 !important;
+}
+.mermaid .section-8 rect, .mermaid .section-8 circle, .mermaid .section-8 polygon, .mermaid .section-8 path,
+.mermaid .mindmap-node.section-8 rect, .mermaid .mindmap-node.section-8 circle, .mermaid .mindmap-node.section-8 polygon, .mermaid .mindmap-node.section-8 path {
+  fill: #d6e8f8 !important; stroke: #6ba3e0 !important;
+}
+.mermaid .section-9 rect, .mermaid .section-9 circle, .mermaid .section-9 polygon, .mermaid .section-9 path,
+.mermaid .mindmap-node.section-9 rect, .mermaid .mindmap-node.section-9 circle, .mermaid .mindmap-node.section-9 polygon, .mermaid .mindmap-node.section-9 path {
+  fill: #e6dcf5 !important; stroke: #b39ddb !important;
+}
+.mermaid .section-10 rect, .mermaid .section-10 circle, .mermaid .section-10 polygon, .mermaid .section-10 path,
+.mermaid .mindmap-node.section-10 rect, .mermaid .mindmap-node.section-10 circle, .mermaid .mindmap-node.section-10 polygon, .mermaid .mindmap-node.section-10 path {
+  fill: #d4eedf !important; stroke: #3d9a6a !important;
+}
+.mermaid .section-11 rect, .mermaid .section-11 circle, .mermaid .section-11 polygon, .mermaid .section-11 path,
+.mermaid .mindmap-node.section-11 rect, .mermaid .mindmap-node.section-11 circle, .mermaid .mindmap-node.section-11 polygon, .mermaid .mindmap-node.section-11 path {
+  fill: #d4f0ee !important; stroke: #5ec4c0 !important;
 }
 .mermaid .mindmap-node text,
 .mermaid .mindmap-node tspan,
@@ -1185,6 +1250,18 @@ td.year { font-family: var(--font-mono); color: var(--accent-soft); white-space:
   stroke: #d4af37 !important;
   fill: none !important;
 }
+.mermaid .section-edge-0, .mermaid [class*="section-edge-0"] { stroke: #d4af37 !important; }
+.mermaid .section-edge-1, .mermaid [class*="section-edge-1"] { stroke: #6ba3e0 !important; }
+.mermaid .section-edge-2, .mermaid [class*="section-edge-2"] { stroke: #b39ddb !important; }
+.mermaid .section-edge-3, .mermaid [class*="section-edge-3"] { stroke: #3d9a6a !important; }
+.mermaid .section-edge-4, .mermaid [class*="section-edge-4"] { stroke: #5ec4c0 !important; }
+.mermaid .section-edge-5, .mermaid [class*="section-edge-5"] { stroke: #c45c5c !important; }
+.mermaid .section-edge-6, .mermaid [class*="section-edge-6"] { stroke: #e8a85c !important; }
+.mermaid .section-edge-7, .mermaid [class*="section-edge-7"] { stroke: #d4af37 !important; }
+.mermaid .section-edge-8, .mermaid [class*="section-edge-8"] { stroke: #6ba3e0 !important; }
+.mermaid .section-edge-9, .mermaid [class*="section-edge-9"] { stroke: #b39ddb !important; }
+.mermaid .section-edge-10, .mermaid [class*="section-edge-10"] { stroke: #3d9a6a !important; }
+.mermaid .section-edge-11, .mermaid [class*="section-edge-11"] { stroke: #5ec4c0 !important; }
 
 @media (max-width: 600px) {
   .mermaid svg {
@@ -1676,6 +1753,16 @@ a.chip:hover {
   padding-left: 0;
   padding-right: 0;
 }
+.content-inner > section.hero {
+  margin-bottom: .55rem;
+  padding-bottom: 1rem;
+}
+.content-inner > section.one-line-section.mod-oneline,
+.content-inner > section.mod-oneline {
+  margin-top: .35rem;
+  padding-top: .65rem;
+  padding-bottom: 1.25rem;
+}
 @media (min-width: 600px) {
   .content-inner > section {
     padding: 1.6rem 1.5rem 1.85rem;
@@ -1684,6 +1771,14 @@ a.chip:hover {
   .content-inner > section.one-line-section {
     padding-left: 0;
     padding-right: 0;
+  }
+  .content-inner > section.hero {
+    padding-bottom: 1.1rem;
+  }
+  .content-inner > section.one-line-section.mod-oneline,
+  .content-inner > section.mod-oneline {
+    padding-top: .75rem;
+    padding-bottom: 1.4rem;
   }
 }
 .mod-guide {
