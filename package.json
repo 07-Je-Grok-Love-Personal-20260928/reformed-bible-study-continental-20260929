@@ -1,8 +1,8 @@
 {
   "name": "reformed-bible-study-continental-20260929",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "private": true,
-  "description": "欧陆改革宗整本圣经研读（2026-09-29 仓库 · 内容 v2 + UI 回滚至 premium glass）：故事线·地理·圣约·诸王纪年·66卷速学",
+  "description": "欧陆改革宗整本圣经研读：回滚至 5bae235（66卷+可视化）并保留故事线思维导图 Mermaid",
   "scripts": {
     "start": "npx --yes serve -l 3456 .",
     "preview": "npx --yes serve -l 3456 ."
