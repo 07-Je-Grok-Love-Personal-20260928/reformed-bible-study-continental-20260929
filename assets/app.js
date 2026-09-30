@@ -45,6 +45,8 @@
     sidebar?.classList.add("open");
     sidebar?.classList.remove("collapsed");
     overlay?.classList.add("show");
+    overlay?.setAttribute("aria-hidden", "false");
+    sidebar?.setAttribute("aria-hidden", "false");
     menuBtn?.setAttribute("aria-expanded", "true");
     if (MQ_DESKTOP.matches) {
       appShell?.classList.add("sidebar-visible");
@@ -53,18 +55,24 @@
     } else {
       document.body.classList.add("nav-open");
       document.body.style.overflow = "hidden";
+      // Focus close button for a11y without stealing if user tapped hamburger again
+      try { document.getElementById("sidebar-close")?.focus({ preventScroll: true }); } catch (_) {}
     }
   }
 
   function closeSidebar() {
     sidebar?.classList.remove("open");
     overlay?.classList.remove("show");
+    overlay?.setAttribute("aria-hidden", "true");
     menuBtn?.setAttribute("aria-expanded", "false");
     document.body.classList.remove("nav-open");
     document.body.style.overflow = "";
     if (MQ_DESKTOP.matches) {
       sidebar?.classList.add("collapsed");
       appShell?.classList.remove("sidebar-visible");
+    } else {
+      sidebar?.setAttribute("aria-hidden", "true");
+      try { menuBtn?.focus({ preventScroll: true }); } catch (_) {}
     }
   }
 
@@ -92,8 +100,10 @@
       menuBtn?.setAttribute("aria-expanded", "true");
     } else {
       sidebar?.classList.remove("open");
+      sidebar?.setAttribute("aria-hidden", "true");
       appShell?.classList.remove("sidebar-visible");
       overlay?.classList.remove("show");
+      overlay?.setAttribute("aria-hidden", "true");
       menuBtn?.setAttribute("aria-expanded", "false");
     }
   }
