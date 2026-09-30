@@ -1270,6 +1270,29 @@ td.year { font-family: var(--font-mono); color: var(--accent-soft); white-space:
   }
 }
 
+/* Storyline mindmap: fixed wide canvas so layout never compresses/crosses */
+.mermaid-wrap.storyline-mind {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  max-width: 100%;
+}
+.mermaid-wrap.storyline-mind .mermaid {
+  display: block;
+  min-width: 1100px;
+  width: 1100px;
+  max-width: none;
+  justify-content: flex-start;
+}
+.mermaid-wrap.storyline-mind .mermaid svg {
+  max-width: none !important;
+  min-width: 1100px;
+  width: 1100px;
+  height: auto !important;
+}
+
+
 /* Covenant before/after */
 .covenant-flow {
   display: grid;

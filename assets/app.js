@@ -327,6 +327,7 @@
       svg.querySelectorAll("foreignObject div, foreignObject span, foreignObject p").forEach((el) => {
         el.style.color = "#1a1a1a";
       });
+      // Colors only — never touch path d= or node transform (layout geometry)
       svg.querySelectorAll(".edgePath path, .flowchart-link, .mindmap-edges path, .mindmap-edges line, .edge, [class*=\"section-edge-\"]").forEach((el) => {
         const host = el.closest("[class*=\"section-edge-\"]") || el;
         const cls = (host.getAttribute("class") || "") + " " + (el.getAttribute("class") || "");
@@ -362,11 +363,24 @@
         nodeSpacing: 28,
         rankSpacing: 36,
       },
-      mindmap: { useMaxWidth: true, padding: 12 },
+      mindmap: { useMaxWidth: false, padding: 28 },
       securityLevel: "loose",
     });
     mermaid.run({ querySelector: ".mermaid" })
       .then(() => {
+        document.querySelectorAll(".storyline-mind svg").forEach((svg) => {
+          const w = Number(svg.getAttribute("width")) || 0;
+          const vb = (svg.getAttribute("viewBox") || "").split(/\s+/);
+          const vbW = vb.length === 4 ? Number(vb[2]) : 0;
+          const target = Math.max(1100, w, vbW || 0);
+          if (!w || w < 1100) {
+            svg.setAttribute("width", String(target));
+            if (svg.style) {
+              svg.style.width = target + "px";
+              svg.style.maxWidth = "none";
+            }
+          }
+        });
         forceMermaidContrast();
         // Second pass after layout settles
         setTimeout(forceMermaidContrast, 120);
