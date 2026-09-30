@@ -231,28 +231,85 @@
     nodeTextColor: "#1a1a1a",
     fontFamily: "system-ui, Noto Sans SC, sans-serif",
     fontSize: "16px",
+    /* Mindmap section palette (cScale / git*) — cream fills, dark labels, gold lines */
+    git0: "#f0d878",
+    gitBranchLabel0: "#1a1a1a",
+    git1: "#f5e6c4",
+    gitBranchLabel1: "#1a1a1a",
+    git2: "#e8d5a3",
+    gitBranchLabel2: "#1a1a1a",
+    git3: "#fff8e7",
+    gitBranchLabel3: "#1a1a1a",
+    cScale0: "#f5e6c4",
+    cScaleLabel0: "#1a1a1a",
+    cScaleInv0: "#d4af37",
+    cScale1: "#fff8e7",
+    cScaleLabel1: "#1a1a1a",
+    cScaleInv1: "#d4af37",
+    cScale2: "#e8d5a3",
+    cScaleLabel2: "#1a1a1a",
+    cScaleInv2: "#d4af37",
+    cScale3: "#f0d878",
+    cScaleLabel3: "#1a1a1a",
+    cScaleInv3: "#d4af37",
+    cScale4: "#f7e9c8",
+    cScaleLabel4: "#1a1a1a",
+    cScaleInv4: "#d4af37",
+    cScale5: "#ffe9b8",
+    cScaleLabel5: "#1a1a1a",
+    cScaleInv5: "#d4af37",
+    cScale6: "#f5e6c4",
+    cScaleLabel6: "#1a1a1a",
+    cScaleInv6: "#d4af37",
+    cScale7: "#fff8e7",
+    cScaleLabel7: "#1a1a1a",
+    cScaleInv7: "#d4af37",
+    cScale8: "#e8d5a3",
+    cScaleLabel8: "#1a1a1a",
+    cScaleInv8: "#d4af37",
+    cScale9: "#f0d878",
+    cScaleLabel9: "#1a1a1a",
+    cScaleInv9: "#d4af37",
+    cScale10: "#f7e9c8",
+    cScaleLabel10: "#1a1a1a",
+    cScaleInv10: "#d4af37",
+    cScale11: "#ffe9b8",
+    cScaleLabel11: "#1a1a1a",
+    cScaleInv11: "#d4af37",
   };
 
   function forceMermaidContrast() {
     document.querySelectorAll(".mermaid svg").forEach((svg) => {
+      // Flowchart nodes
       svg.querySelectorAll(".node rect, .node polygon, .node circle, .node path").forEach((el) => {
         const fill = (el.getAttribute("fill") || "").toLowerCase();
-        if (!fill || fill === "none" || fill === "#0f172a" || fill === "#152238" || fill === "#1a2b45" || fill === "#1e334f") {
+        if (!fill || fill === "none" || fill === "#0f172a" || fill === "#152238" || fill === "#1a2b45" || fill === "#1e334f" || fill === "#000" || fill === "#000000" || fill === "rgb(0, 0, 0)" || fill === "black") {
           el.setAttribute("fill", "#f5e6c4");
         }
         if (!el.getAttribute("stroke") || el.getAttribute("stroke") === "none") {
           el.setAttribute("stroke", "#d4af37");
         }
       });
-      svg.querySelectorAll("text, .nodeLabel, tspan").forEach((el) => {
+      // Mindmap nodes (section-* / section-root) — always cream + gold; root slightly brighter
+      svg.querySelectorAll(".mindmap-node rect, .mindmap-node polygon, .mindmap-node circle, .mindmap-node path, [class*=\"section-\"] rect, [class*=\"section-\"] polygon, [class*=\"section-\"] circle, [class*=\"section-\"] path").forEach((el) => {
+        const root = el.closest(".section-root, .mindmap-node.section-root");
+        el.setAttribute("fill", root ? "#f0d878" : "#f5e6c4");
+        el.setAttribute("stroke", root ? "#c9a227" : "#d4af37");
+        if (el.style) {
+          el.style.fill = root ? "#f0d878" : "#f5e6c4";
+          el.style.stroke = root ? "#c9a227" : "#d4af37";
+        }
+      });
+      svg.querySelectorAll("text, .nodeLabel, tspan, .mindmap-node-label").forEach((el) => {
         el.setAttribute("fill", "#1a1a1a");
         if (el.style) el.style.color = "#1a1a1a";
       });
       svg.querySelectorAll("foreignObject div, foreignObject span, foreignObject p").forEach((el) => {
         el.style.color = "#1a1a1a";
       });
-      svg.querySelectorAll(".edgePath path, .flowchart-link").forEach((el) => {
+      svg.querySelectorAll(".edgePath path, .flowchart-link, .mindmap-edges path, .mindmap-edges line, .edge, [class*=\"section-edge-\"]").forEach((el) => {
         el.setAttribute("stroke", "#d4af37");
+        if (el.style) el.style.stroke = "#d4af37";
       });
       svg.querySelectorAll(".marker, defs marker path").forEach((el) => {
         el.setAttribute("fill", "#d4af37");

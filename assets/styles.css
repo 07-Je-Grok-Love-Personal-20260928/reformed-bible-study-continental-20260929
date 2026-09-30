@@ -1137,6 +1137,55 @@ td.year { font-family: var(--font-mono); color: var(--accent-soft); white-space:
 .mermaid .flowchart-link {
   stroke: #d4af37 !important;
 }
+/* Mindmap ignores flowchart themeVariables — force navy/gold premium contrast */
+.mermaid .mindmap-node rect,
+.mermaid .mindmap-node circle,
+.mermaid .mindmap-node polygon,
+.mermaid .mindmap-node path,
+.mermaid [class*="section-"] rect,
+.mermaid [class*="section-"] circle,
+.mermaid [class*="section-"] polygon,
+.mermaid [class*="section-"] path,
+.mermaid .section-root rect,
+.mermaid .section-root circle,
+.mermaid .section-root polygon,
+.mermaid .section-root path {
+  fill: #f5e6c4 !important;
+  stroke: #d4af37 !important;
+}
+.mermaid .mindmap-node.section-root rect,
+.mermaid .mindmap-node.section-root circle,
+.mermaid .mindmap-node.section-root polygon,
+.mermaid .mindmap-node.section-root path,
+.mermaid .section-root rect,
+.mermaid .section-root circle,
+.mermaid .section-root polygon,
+.mermaid .section-root path {
+  fill: #f0d878 !important;
+  stroke: #c9a227 !important;
+}
+.mermaid .mindmap-node text,
+.mermaid .mindmap-node tspan,
+.mermaid .mindmap-node-label,
+.mermaid .mindmap-node-label text,
+.mermaid .mindmap-node-label tspan,
+.mermaid [class*="section-"] text,
+.mermaid [class*="section-"] tspan,
+.mermaid .section-root text,
+.mermaid .section-root tspan {
+  fill: #1a1a1a !important;
+  color: #1a1a1a !important;
+}
+.mermaid .mindmap-edges path,
+.mermaid .mindmap-edges line,
+.mermaid g.mindmap-edges path,
+.mermaid .edge,
+.mermaid [class*="section-edge-"],
+.mermaid [class*="edge-depth-"] {
+  stroke: #d4af37 !important;
+  fill: none !important;
+}
+
 @media (max-width: 600px) {
   .mermaid svg {
     max-width: none;
