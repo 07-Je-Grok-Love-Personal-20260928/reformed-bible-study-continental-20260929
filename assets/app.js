@@ -46,14 +46,21 @@
     sidebar?.classList.remove("collapsed");
     overlay?.classList.add("show");
     menuBtn?.setAttribute("aria-expanded", "true");
-    if (MQ_DESKTOP.matches) appShell?.classList.add("sidebar-visible");
-    document.body.style.overflow = MQ_DESKTOP.matches ? "" : "hidden";
+    if (MQ_DESKTOP.matches) {
+      appShell?.classList.add("sidebar-visible");
+      document.body.classList.remove("nav-open");
+      document.body.style.overflow = "";
+    } else {
+      document.body.classList.add("nav-open");
+      document.body.style.overflow = "hidden";
+    }
   }
 
   function closeSidebar() {
     sidebar?.classList.remove("open");
     overlay?.classList.remove("show");
     menuBtn?.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("nav-open");
     document.body.style.overflow = "";
     if (MQ_DESKTOP.matches) {
       sidebar?.classList.add("collapsed");
@@ -76,6 +83,7 @@
 
   function initSidebarState() {
     document.body.style.overflow = "";
+    document.body.classList.remove("nav-open");
     if (MQ_DESKTOP.matches) {
       sidebar?.classList.add("open");
       sidebar?.classList.remove("collapsed");
@@ -85,12 +93,25 @@
     } else {
       sidebar?.classList.remove("open");
       appShell?.classList.remove("sidebar-visible");
+      overlay?.classList.remove("show");
       menuBtn?.setAttribute("aria-expanded", "false");
     }
   }
 
-  menuBtn?.addEventListener("click", toggleSidebar);
-  overlay?.addEventListener("click", closeSidebar);
+  menuBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleSidebar();
+  });
+  overlay?.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeSidebar();
+  });
+  document.getElementById("sidebar-close")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    closeSidebar();
+  });
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeSidebar();
@@ -168,11 +189,14 @@
   });
 
   /* —— Expand / collapse ALL folds —— */
-  document.getElementById("expand-all")?.addEventListener("click", () => {
-    document.querySelectorAll("details.fold").forEach((d) => { d.open = true; });
+  function setAllFolds(open) {
+    document.querySelectorAll("details.fold").forEach((d) => { d.open = open; });
+  }
+  ["expand-all", "expand-all-hero"].forEach((id) => {
+    document.getElementById(id)?.addEventListener("click", () => setAllFolds(true));
   });
-  document.getElementById("collapse-all")?.addEventListener("click", () => {
-    document.querySelectorAll("details.fold").forEach((d) => { d.open = false; });
+  ["collapse-all", "collapse-all-hero"].forEach((id) => {
+    document.getElementById(id)?.addEventListener("click", () => setAllFolds(false));
   });
 
   /* —— High-contrast Mermaid theme (cream/gold nodes, dark text, gold edges) —— */

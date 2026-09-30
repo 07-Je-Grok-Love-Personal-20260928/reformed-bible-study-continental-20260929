@@ -14,19 +14,13 @@
     <button type="button" class="menu-toggle" id="menu-toggle" aria-label="切换目录" aria-expanded="false" aria-controls="sidebar">
       <span></span><span></span><span></span>
     </button>
-    <svg class="header-crest" viewBox="0 0 72 72" aria-hidden="true">
+    <svg class="header-crest" viewBox="0 0 72 72" aria-hidden="true" title="欧陆改革宗">
       <circle cx="36" cy="36" r="34" fill="#0f1a2c" stroke="#d4af37" stroke-width="2.2"/>
       <path d="M36 14 L41 28 L56 28 L44 37 L48 52 L36 43 L24 52 L28 37 L16 28 L31 28 Z" fill="#f0d878" stroke="#c9a227" stroke-width="0.8"/>
       <circle cx="36" cy="36" r="28" fill="none" stroke="#c9a227" stroke-width="0.6" opacity="0.45"/>
     </svg>
-    <div class="brand">
-      <span class="brand-title">欧陆改革宗 · 整本圣经研读</span>
-      <span class="brand-sub">三项联合信条 · 三大普世信经 · 以基督为中心</span>
-    </div>
-    <div class="header-actions">
-      <button type="button" class="btn-text" id="expand-all" title="展开全部折叠">展开全部</button>
-      <button type="button" class="btn-text" id="collapse-all" title="收起全部折叠">收起全部</button>
-    </div>
+    <span class="sr-only">欧陆改革宗 · 整本圣经研读</span>
+    <div class="header-spacer" aria-hidden="true"></div>
     <div class="progress-bar" id="progress-bar" role="progressbar" aria-label="阅读进度"></div>
   </header>
 
@@ -34,11 +28,22 @@
 
   <div class="app-shell" id="app-shell">
     <aside class="sidebar" id="sidebar" aria-label="目录">
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-text">
+          <span class="brand-title">欧陆改革宗 · 整本圣经研读</span>
+          <span class="brand-sub">三项联合信条 · 三大普世信经 · 以基督为中心</span>
+        </div>
+        <button type="button" class="sidebar-close" id="sidebar-close" aria-label="关闭目录">×</button>
+      </div>
       <div class="toc-search-wrap">
         <input type="search" class="toc-search" id="toc-search" placeholder="筛选章节…" autocomplete="off" aria-label="搜索目录" />
       </div>
       <div class="toc-label">目录导航</div>
       <nav class="toc-nav" id="toc-nav"></nav>
+      <div class="sidebar-footer">
+        <button type="button" class="btn-text" id="expand-all" title="展开全部折叠">展开全部</button>
+        <button type="button" class="btn-text" id="collapse-all" title="收起全部折叠">收起全部</button>
+      </div>
     </aside>
 
     <main class="main" id="main">
@@ -52,6 +57,7 @@
     <text x="36" y="64" text-anchor="middle" fill="#f0d878" font-size="7" font-family="serif">SOLI DEO GLORIA</text>
   </svg>
   <h1>整本圣经 · 欧陆改革宗研读</h1>
+  <p class="hero-brand-line">三项联合信条 · 三大普世信经 · 以基督为中心</p>
   <p class="lead">
     以<strong>唯独圣经、唯独恩典、唯独信心、唯独基督、唯独荣耀归于神</strong>为根基，在<strong>三项联合信条</strong>（比利时信条、海德堡要理问答、多特信经）与<strong>三大普世信经</strong>（使徒、尼西亚、亚他那修）护卫下，先宏观后局部，贯通救赎历史、圣约神学与诸王时代。
   </p>
@@ -63,6 +69,11 @@
     <span class="chip chip-purple"><span class="chip-ico" aria-hidden="true">✝️</span>基督中心</span>
     <a class="chip chip-green" href="#sec-oneline"><span class="chip-ico" aria-hidden="true">🧭</span>一条线</a>
     <a class="chip chip-rose" href="#sec-2-2"><span class="chip-ico" aria-hidden="true">📱</span>手机速记</a>
+  </div>
+  <div class="hero-toolbar">
+    <button type="button" class="btn-text" id="expand-all-hero" title="展开全部折叠">⬇ 展开全部</button>
+    <button type="button" class="btn-text" id="collapse-all-hero" title="收起全部折叠">⬆ 收起全部</button>
+    <a class="btn-text" href="#sec-0">开始导论</a>
   </div>
   <div class="solas">
     <div class="sola"><div class="sola-lat">Sola Scriptura</div><div class="sola-zh">唯独圣经</div></div>
@@ -221,7 +232,51 @@
     <strong>拒斥：</strong>自由派历史批判否定超自然；极端寓意解经不顾作者原意；道德主义把圣经当「怎样成功」手册；忽视圣约与教会群体的个人主义读经。
   </div>
 
-  <h3 id="sec-0-2">阅读路径建议</h3>
+  <h3 id="sec-0-essence">导论精髓：前因 · 背景 · 核心 · 枢纽 · 后果 · 应用</h3>
+  <div class="table-wrap table-scroll">
+    <table>
+      <thead><tr><th>层面</th><th>内容（欧陆改革宗）</th><th>信条锚点</th></tr></thead>
+      <tbody>
+        <tr><td><span class="mark-history">前因</span></td><td>人已堕落：既不知己罪，也不认识中保；若无神言，只能自义或绝望。</td><td>比 14–15；海德堡 Q&amp;A 3–5</td></tr>
+        <tr><td><span class="mark-history">背景</span></td><td>圣经是救赎历史叙事与启示，不是格言集；正典在教会中被承认、被宣讲。</td><td>比 2–7；海德堡 Q&amp;A 19</td></tr>
+        <tr><td><span class="mark-core">核心</span></td><td>以经解经 + 文法历史 + 基督中心；区分律法功用与福音宣告。</td><td>海德堡 Q&amp;A 2–3、19、21</td></tr>
+        <tr><td><span class="mark-hub">枢纽</span></td><td>路 24:44–47：律法、先知、圣卷都指向基督的受苦与复活，以及奉祂名传悔改赦罪。</td><td>比 22；海德堡 Q&amp;A 29–52</td></tr>
+        <tr><td><span class="mark-warn">后果</span></td><td>混淆律法/福音 → 律法主义或反律；抽空历史 → 寓意失控；忽略信条 → 私意解经。</td><td>多特结语；比 7</td></tr>
+        <tr><td><span class="mark-apply">应用</span></td><td>个人：两栏笔记「律法所露 / 福音所指」。教会：讲道次序罪人→中保→新生活。</td><td>海德堡 Q&amp;A 86–91</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout callout-creed">
+    <strong class="cot">⚖️ 信条校准 · 读经边界</strong>
+    <p class="mb-0"><span class="chip chip-blue"><span class="chip-ico" aria-hidden="true">📜</span>比 2–7</span>
+    <span class="chip chip-gold"><span class="chip-ico" aria-hidden="true">✝️</span>海德堡 12–23</span>
+    <span class="chip chip-purple"><span class="chip-ico" aria-hidden="true">🛡️</span>多特</span>
+    <span class="mark-creed">疑难处以公共认信拦阻私意</span>，再回到原文与正典语境。</p>
+  </div>
+
+  <h3 id="sec-0-law-gospel-flow">律法 ↔ 福音对照流程</h3>
+  <div class="mermaid-wrap diagram-scroll">
+    <pre class="mermaid">
+flowchart LR
+  A[读经段落] --> B{这段在做什么？}
+  B -->|追责 / 显罪 / 规范| L[律法功用<br/>镜子·抑制·指南]
+  B -->|应许 / 成就 / 宣告| G[福音宣告<br/>基督已成全]
+  L --> C[扎心 · 知无能]
+  C --> G
+  G --> D[因信安息]
+  D --> E[感恩中遵行<br/>第三功用]
+  E -.->|再被律法光照| L
+  style A fill:#f5e6c4,stroke:#d4af37,color:#1a1a1a
+  style B fill:#f0d878,stroke:#c9a227,color:#1a1a1a
+  style L fill:#f0c0c0,stroke:#c45c5c,color:#1a1a1a
+  style G fill:#c8e6d0,stroke:#3d9a6a,color:#1a1a1a
+  style C fill:#fff8e7,stroke:#b8973e,color:#1a1a1a
+  style D fill:#f5e6c4,stroke:#d4af37,color:#1a1a1a
+  style E fill:#c5ddf5,stroke:#4a90d9,color:#1a1a1a
+    </pre>
+  </div>
+
+    <h3 id="sec-0-2">阅读路径建议</h3>
   <ol>
     <li><strong>先宏观</strong>：正典结构 → 救赎历史时间线 → 圣约框架（本站第 1–3 章）。</li>
     <li><strong>再主线</strong>：国度、圣殿、献祭、后裔、余民、弥赛亚（第 4 章）。</li>
@@ -578,6 +633,38 @@ flowchart TB
     <strong class="cot">⚖️ 信条校准</strong>
     <p class="mb-0"><span class="mark-creed">比利时信条 16–17、22–23</span>：拣选、中保、因信称义；<span class="mark-creed">海德堡 Q&amp;A 12–23、66–85</span>：公义、中保、圣礼；<span class="mark-creed">多特第一、二项</span>：拣选与基督之死的功效。疑难处以信条对照经文，而非以感觉重写约。</p>
   </div>
+
+  <h3 id="sec-3-promise-fulfill">旧约应许 → 新约成就（简图）</h3>
+  <div class="mermaid-wrap diagram-scroll">
+    <pre class="mermaid">
+flowchart TB
+  P1[后裔应许<br/>创 3:15 / 12:3] --> C1[基督：真后裔<br/>加 3:16]
+  P2[逾越 / 出埃及<br/>出 12–15] --> C2[真羔羊与释放<br/>林前 5:7]
+  P3[西奈影儿<br/>会幕·祭司·祭] --> C3[一次永远之祭<br/>来 8–10]
+  P4[大卫之约<br/>撒下 7] --> C4[永远之王<br/>路 1:32–33]
+  P5[新约应许<br/>耶 31 / 结 36] --> C5[宝血立定新约<br/>路 22；来 8]
+  C1 --> CHU[教会：圣约群体<br/>圣洗·圣餐为记号]
+  C2 --> CHU
+  C3 --> CHU
+  C4 --> CHU
+  C5 --> CHU
+  style P1 fill:#fff8e7,stroke:#b8973e,color:#1a1a1a
+  style P2 fill:#fff8e7,stroke:#b8973e,color:#1a1a1a
+  style P3 fill:#fff8e7,stroke:#b8973e,color:#1a1a1a
+  style P4 fill:#fff8e7,stroke:#b8973e,color:#1a1a1a
+  style P5 fill:#fff8e7,stroke:#b8973e,color:#1a1a1a
+  style C1 fill:#f0d878,stroke:#c9a227,color:#1a1a1a
+  style C2 fill:#f0d878,stroke:#c9a227,color:#1a1a1a
+  style C3 fill:#f0d878,stroke:#c9a227,color:#1a1a1a
+  style C4 fill:#f0d878,stroke:#c9a227,color:#1a1a1a
+  style C5 fill:#f0d878,stroke:#c9a227,color:#1a1a1a
+  style CHU fill:#c8e6d0,stroke:#3d9a6a,color:#1a1a1a
+    </pre>
+  </div>
+  <div class="callout callout-hub">
+    <strong class="cot">🔗 圣约 3–7 再钉死</strong>
+    <p class="mb-0"><span class="mark-core">总约框架</span>框住正典；对照表显记号与应许；演进显<span class="mark-hub">同一恩典</span>；摩西是施行不是第二套救法；前因→枢纽→后果→应用收束到圣礼与敬拜。<span class="mark-christ">一切阶段性圣约的「是」在基督</span>（林后 1:20）。</p>
+  </div>
 </section>
 
 <!-- ========== 4 圣经神学主线 ========== -->
@@ -603,7 +690,7 @@ flowchart TB
 <!-- ========== 5 旧约分卷 ========== -->
 <section class="mod-ot" id="s5">
   <h2 id="sec-5">📗 5. 旧约分卷精读要点</h2>
-  <p>每卷采六栏式：<strong>背景 · 为何写 · 写了什么 · 神学核心 · 基督指向 · 应用</strong>。默认折叠，点击标题展开；页眉「展开全部 / 收起全部」可一键开合。</p>
+  <p>每卷采六栏式：<strong>背景 · 为何写 · 写了什么 · 神学核心 · 基督指向 · 应用</strong>。默认折叠，点击标题展开；侧栏或首页工具列「展开全部 / 收起全部」可一键开合。</p>
 
   <h3 id="sec-5-torah">律法书（创—申）</h3>
   <p class="note"><strong>五经怎么串：</strong>创世记立「创造—堕落—应许」；出埃及记显「救赎在先、敬拜随后」；利未记教「如何亲近圣洁之神」；民数记警戒「恩典下仍可因不信倒毙」；申命记重申约、为进入之地与日后诸王/先知提供准绳。整组指向：需要一位比摩西更大的先知、比亚伦更大的祭司、比祭牲更美的血——即基督。</p>
@@ -851,6 +938,27 @@ flowchart TB
   <h3 id="sec-5-prophet">先知书精要（赛—玛）</h3>
   <p class="note">先知是「约的检察官与福音预告者」：按申命记标准追责，又宣告余民与弥赛亚盼望。以下为大先知六栏精读；小先知见速览表。</p>
 
+  <h3 id="sec-5-prophet-essence">先知精髓块（常开）</h3>
+  <div class="card-grid cols-2">
+    <div class="callout callout-cause" style="margin:0">
+      <strong class="cot">⚡ 前因 / 背景</strong>
+      <p class="mb-0">圣约群体拜偶像、压迫穷人、迷信圣殿护身符；列强（亚述/巴比伦）兴起作神的杖。<span class="mark-history">先知按申命记说话</span>，不是发明新宗教。</p>
+    </div>
+    <div class="callout callout-hub" style="margin:0">
+      <strong class="cot">🔗 核心 / 枢纽</strong>
+      <p class="mb-0"><span class="mark-core">赛</span>圣哉+仆人；<span class="mark-core">耶</span>拆毁/建立+新约；<span class="mark-core">结</span>荣耀离殿+新心；<span class="mark-core">但</span>帝国中人子得国。<span class="mark-christ">审判与弥赛亚盼望同卷并陈</span>。</p>
+    </div>
+    <div class="callout callout-effect" style="margin:0">
+      <strong class="cot">📉 后果</strong>
+      <p class="mb-0">拒绝先知 = 加速 722/586；接受余民应许 = 在被掳中仍有盼望。<span class="mark-warn">假先知的「平安了」是致命安慰</span>。</p>
+    </div>
+    <div class="callout callout-apply" style="margin:0">
+      <strong class="cot">✅ 应用</strong>
+      <p class="mb-0">先听定罪，再抓住福音；以先知对照诸王年表；教会讲道拒廉价恩典。<span class="mark-apply">个人：在「被掳感」中作守望者，不向偶像屈膝</span>（比 36–37 可对照敬拜独一真神）。</p>
+    </div>
+  </div>
+
+
   <details class="fold">
     <summary><span class="fold-ico" aria-hidden="true">📢</span>以赛亚书 — 圣洁之王与仆人之歌</summary>
     <div class="fold-body">
@@ -1000,6 +1108,25 @@ flowchart TB
     <strong class="cot">✝️ 基督如何「回答」诸王书？</strong>
     <p class="mb-0">祂是完美顺服的大卫子孙（不像扫罗看外表、不像所罗门晚节偏邪）；祂的身体是真圣殿（约 2）；祂承担约的咒诅（加 3:13）；祂以宝血立新约（路 22）。<span class="mark-promise">因此读王记的终点是敬拜，不是怀旧「黄金年代」</span>。</p>
   </div>
+
+  <h3 id="sec-6-color-strip">诸王分裂彩色记忆带</h3>
+  <div class="kings-memory-strip" aria-label="诸王年代色带">
+    <div class="kms-item kms-united"><span class="kms-yr">约1050–931</span><span class="kms-lb">联合王国</span><span class="kms-note">扫罗 → 大卫 → 所罗门</span></div>
+    <div class="kms-item kms-split"><span class="kms-yr">931</span><span class="kms-lb">分裂</span><span class="kms-note">罗波安 / 耶罗波安</span></div>
+    <div class="kms-item kms-north"><span class="kms-yr">931–722</span><span class="kms-lb">北国以色列</span><span class="kms-note">金牛犊·无一义王</span></div>
+    <div class="kms-item kms-south"><span class="kms-yr">931–586</span><span class="kms-lb">南国犹大</span><span class="kms-note">偶有改革·灯火不灭</span></div>
+    <div class="kms-item kms-fall-n"><span class="kms-yr">722</span><span class="kms-lb">北亡</span><span class="kms-note">亚述·撒玛利亚</span></div>
+    <div class="kms-item kms-fall-s"><span class="kms-yr">586</span><span class="kms-lb">南亡</span><span class="kms-note">巴比伦·殿毁</span></div>
+    <div class="kms-item kms-return"><span class="kms-yr">538+</span><span class="kms-lb">归回余民</span><span class="kms-note">古列·二殿·仍等基督</span></div>
+  </div>
+  <div class="color-legend" aria-label="色带图例">
+    <span class="chip chip-gold"><span class="chip-ico" aria-hidden="true">👑</span>联合</span>
+    <span class="chip chip-rose"><span class="chip-ico" aria-hidden="true">🐄</span>北国</span>
+    <span class="chip chip-amber"><span class="chip-ico" aria-hidden="true">🕯️</span>南国</span>
+    <span class="chip chip-blue"><span class="chip-ico" aria-hidden="true">⚔️</span>亡国审判</span>
+    <span class="chip chip-green"><span class="chip-ico" aria-hidden="true">🌱</span>归回盼望</span>
+  </div>
+
 
   <div class="card-grid cols-3">
     <div class="card">
@@ -1338,6 +1465,41 @@ flowchart LR
     <p class="mb-0">罗马/加拉太 ↔ <span class="mark-creed">比 22–23、多特</span>（称义与恩典）；希伯来 ↔ <span class="mark-creed">海德堡 Q&amp;A 12–18</span>（中保与祭）；启示录 ↔ <span class="mark-creed">海德堡 Q&amp;A 52、57–58</span>（再来、复活、永生）。</p>
   </div>
 
+  <h3 id="sec-7-church-sacraments">教会论 / 圣礼小图</h3>
+  <div class="mermaid-wrap diagram-scroll">
+    <pre class="mermaid">
+flowchart TB
+  G[福音被宣讲<br/>罗 10:14–17] --> W[真教会标记<br/>比 29]
+  W --> M1[纯正圣道]
+  W --> M2[施行圣礼]
+  W --> M3[教会纪律]
+  M2 --> B[圣洗：归入基督<br/>海德堡 69–74]
+  M2 --> S[圣餐：喂养信心<br/>海德堡 75–82]
+  B --> LIFE[恩典之约下的<br/>敬拜群体]
+  S --> LIFE
+  M1 --> LIFE
+  M3 --> LIFE
+  LIFE --> HOPE[已然未济<br/>等候主再来]
+  style G fill:#f0d878,stroke:#c9a227,color:#1a1a1a
+  style W fill:#f5e6c4,stroke:#d4af37,color:#1a1a1a
+  style M1 fill:#c5ddf5,stroke:#4a90d9,color:#1a1a1a
+  style M2 fill:#fff8e7,stroke:#b8973e,color:#1a1a1a
+  style M3 fill:#f0c0c0,stroke:#c45c5c,color:#1a1a1a
+  style B fill:#c8e6d0,stroke:#3d9a6a,color:#1a1a1a
+  style S fill:#c8e6d0,stroke:#3d9a6a,color:#1a1a1a
+  style LIFE fill:#f5e6c4,stroke:#d4af37,color:#1a1a1a
+  style HOPE fill:#e8d5f5,stroke:#9b7bb8,color:#1a1a1a
+    </pre>
+  </div>
+  <div class="callout callout-apply">
+    <strong class="cot">✅ 新约枢纽应用卡</strong>
+    <p class="mb-0"><span class="chip chip-gold"><span class="chip-ico" aria-hidden="true">📖</span>罗马</span>定称义；
+    <span class="chip chip-rose"><span class="chip-ico" aria-hidden="true">⚔️</span>加拉太</span>拒「基督+」；
+    <span class="chip chip-purple"><span class="chip-ico" aria-hidden="true">🏛️</span>希伯来</span>影儿→实体；
+    <span class="chip chip-teal"><span class="chip-ico" aria-hidden="true">🌅</span>启示录</span>羔羊敬拜。
+    <span class="mark-apply">圣礼不赚功德，乃印证福音</span>（比 33–35）。</p>
+  </div>
+
   <h3 id="sec-7-gospel">四福音书</h3>
   <details class="fold">
     <summary><span class="fold-ico" aria-hidden="true">👑</span>马太福音 — 弥赛亚君王与天国</summary>
@@ -1568,6 +1730,37 @@ flowchart LR
     <p class="mb-0">遇基督论争议 → 尼西亚/亚他那修；遇称义/律法 → 比 22–23、海德堡、多特；遇教会混乱 → 比 27–32。<span class="mark-creed">信条不取代经文，而是拦阻私意解经</span>。</p>
   </div>
 
+  <h3 id="sec-8-essence">信条校准精髓</h3>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <span class="card-tag">⚡ 前因</span>
+      <h4>为何需要信条？</h4>
+      <p class="mb-0">异端常用经文；没有公共认信，教会易被「私意解经」撕裂。<span class="mark-history">信条是历史争战的结晶</span>，不是经院游戏。</p>
+    </div>
+    <div class="card card-gold">
+      <span class="card-tag">🔗 核心</span>
+      <h4>服膺圣经的总结</h4>
+      <p class="mb-0"><span class="mark-core">比 7</span>：信条可错、圣经无误；信条的权威是「服膺的权威」。三项联合 + 三大信经 = 欧陆改革宗护栏。</p>
+    </div>
+    <div class="card">
+      <span class="card-tag">✅ 应用</span>
+      <h4>读经工作流</h4>
+      <p class="mb-0">① 文法历史读经 → ② 正典互释 → ③ 遇节点查信条条款号 → ④ 回到敬拜与顺服。<span class="mark-apply">不要把信条当替代灵修</span>。</p>
+    </div>
+  </div>
+  <div class="callout callout-hub">
+    <strong class="cot">🔗 条款速查芯片</strong>
+    <p class="mb-0">
+      <span class="chip chip-blue"><span class="chip-ico" aria-hidden="true">📖</span>比 2–7 圣经</span>
+      <span class="chip chip-gold"><span class="chip-ico" aria-hidden="true">✝️</span>比 18–23 基督/称义</span>
+      <span class="chip chip-teal"><span class="chip-ico" aria-hidden="true">🏛️</span>比 27–35 教会/圣礼</span>
+      <span class="chip chip-amber"><span class="chip-ico" aria-hidden="true">❓</span>海德堡 罪苦–拯救–感恩</span>
+      <span class="chip chip-purple"><span class="chip-ico" aria-hidden="true">🕊️</span>多特 五要点</span>
+      <span class="chip chip-rose"><span class="chip-ico" aria-hidden="true">🛡️</span>尼西亚 同质</span>
+    </p>
+  </div>
+
+
   <div class="creed-grid">
     <div class="card">
       <span class="card-tag">普世</span>
@@ -1621,7 +1814,7 @@ flowchart LR
 <section class="mod-appendix" id="s9">
   <h2 id="sec-9">📎 9. 附录</h2>
 
-  <p class="note">书卷精读与附录均可折叠。页眉「全部⬇/⬆」控制所有折叠块。导论一条线、时间线总览、手机速记保持常开便于速查。</p>
+  <p class="note">书卷精读与附录均可折叠。侧栏或首页工具列「展开全部 / 收起全部」控制所有折叠块。导论一条线、时间线总览、手机速记保持常开便于速查。</p>
 
   <details class="fold appendix" id="appendix-terms">
   <summary><span class="fold-ico" aria-hidden="true">📖</span>术语表（附录）</summary>
@@ -1691,8 +1884,9 @@ flowchart LR
 </section>
 
 <footer class="site-footer">
-  <p>欧陆改革宗 · 整本圣经研读（静态教学站点）</p>
-  <p class="text-muted">内容供教会与个人学习参考；信条条文请对照正式译本全文。年代为教学常用概数。</p>
+  <p class="footer-brand">欧陆改革宗 · 整本圣经研读</p>
+  <p class="footer-sub">三项联合信条 · 三大普世信经 · 以基督为中心</p>
+  <p class="text-muted">静态教学站点 · 内容供教会与个人学习参考；信条条文请对照正式译本全文。年代为教学常用概数。</p>
   <p><a href="#top">返回顶端</a></p>
 </footer>
 
