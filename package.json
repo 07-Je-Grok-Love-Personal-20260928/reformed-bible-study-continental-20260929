@@ -2,7 +2,7 @@
   "name": "reformed-bible-study-continental-20260929",
   "version": "2.2.1",
   "private": true,
-  "description": "欧陆改革宗整本圣经研读：5bae235 基线 + 故事线思维导图；mindmap 多色分支 + 高对比深色字",
+  "description": "欧陆改革宗整本圣经研读：5bae235 基线 + 故事线结构图；flowchart 多色分支 + 高对比深色字",
   "scripts": {
     "start": "npx --yes serve -l 3456 .",
     "preview": "npx --yes serve -l 3456 ."

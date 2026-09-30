@@ -209,7 +209,7 @@
     document.getElementById(id)?.addEventListener("click", () => setAllFolds(false));
   });
 
-  /* —— High-contrast Mermaid theme (multi-color mindmap branches, dark text) —— */
+  /* —— High-contrast Mermaid theme (multi-color storyline branches, dark text) —— */
   const MERMAID_THEME = {
     darkMode: false,
     background: "#0f1a2c",
@@ -231,7 +231,7 @@
     nodeTextColor: "#1a1a1a",
     fontFamily: "system-ui, Noto Sans SC, sans-serif",
     fontSize: "16px",
-    /* Mindmap section palette — chip colors: gold/blue/purple/green/teal/rose/amber */
+    /* Branch palette — chip colors: gold/blue/purple/green/teal/rose/amber */
     git0: "#f0d878",
     gitBranchLabel0: "#1a1a1a",
     git1: "#d6e8f8",
@@ -357,11 +357,11 @@
       themeVariables: MERMAID_THEME,
       flowchart: {
         curve: "basis",
-        padding: 14,
+        padding: 16,
         useMaxWidth: true,
         htmlLabels: true,
-        nodeSpacing: 28,
-        rankSpacing: 36,
+        nodeSpacing: 24,
+        rankSpacing: 40,
       },
       mindmap: { useMaxWidth: false, padding: 28 },
       securityLevel: "loose",
@@ -372,13 +372,12 @@
           const w = Number(svg.getAttribute("width")) || 0;
           const vb = (svg.getAttribute("viewBox") || "").split(/\s+/);
           const vbW = vb.length === 4 ? Number(vb[2]) : 0;
-          const target = Math.max(1100, w, vbW || 0);
-          if (!w || w < 1100) {
-            svg.setAttribute("width", String(target));
-            if (svg.style) {
-              svg.style.width = target + "px";
-              svg.style.maxWidth = "none";
-            }
+          const target = Math.max(1280, w, vbW || 0);
+          svg.setAttribute("width", String(target));
+          if (svg.style) {
+            svg.style.width = target + "px";
+            svg.style.maxWidth = "none";
+            svg.style.height = "auto";
           }
         });
         forceMermaidContrast();

@@ -1270,7 +1270,7 @@ td.year { font-family: var(--font-mono); color: var(--accent-soft); white-space:
   }
 }
 
-/* Storyline mindmap: fixed wide canvas so layout never compresses/crosses */
+/* Storyline structure flowchart: wide scroll wrap, no compressed crossings */
 .mermaid-wrap.storyline-mind {
   overflow-x: auto;
   overflow-y: hidden;
@@ -1280,16 +1280,26 @@ td.year { font-family: var(--font-mono); color: var(--accent-soft); white-space:
 }
 .mermaid-wrap.storyline-mind .mermaid {
   display: block;
-  min-width: 1100px;
-  width: 1100px;
+  min-width: 1280px;
+  width: max-content;
   max-width: none;
   justify-content: flex-start;
 }
 .mermaid-wrap.storyline-mind .mermaid svg {
   max-width: none !important;
-  min-width: 1100px;
-  width: 1100px;
+  min-width: 1280px;
+  width: auto;
   height: auto !important;
+}
+.mermaid-wrap.storyline-mind .cluster rect {
+  rx: 10px;
+  ry: 10px;
+}
+.mermaid-wrap.storyline-mind .nodeLabel,
+.mermaid-wrap.storyline-mind .nodeLabel span,
+.mermaid-wrap.storyline-mind foreignObject div,
+.mermaid-wrap.storyline-mind foreignObject span {
+  color: #1a1a1a !important;
 }
 
 
