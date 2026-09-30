@@ -6,7 +6,7 @@
   <meta name="description" content="欧陆改革宗整本圣经研读：三项联合信条与三大普世信经框架下的救赎历史、圣约神学、诸王时代与分卷要点。" />
   <title>欧陆改革宗 · 整本圣经研读</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="stylesheet" href="assets/styles.css?v=storyflow1" />
+  <link rel="stylesheet" href="assets/styles.css?v=storyhtml1" />
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js" defer></script>
 </head>
 <body>
@@ -143,118 +143,71 @@
     </div>
   </div>
 
-  <h3 id="sec-storyline-mind">故事线结构图</h3>
-  <div class="mermaid-wrap storyline-mind card">
-    <pre class="mermaid">
-flowchart TB
-  ROOT(["整本圣经<br/>一条救赎故事"])
-
-  ROOT --> A0 & B0 & C0 & D0 & E0 & F0 & G0
-
-  subgraph SA[" "]
-    direction TB
-    A0["创造与堕落"]
-    A1["创1–2 美善"]
-    A2["创3 堕落与敌意"]
-    A3["行为之约破碎"]
-    A0 --> A1
-    A0 --> A2
-    A0 --> A3
-  end
-
-  subgraph SB[" "]
-    direction TB
-    B0["应许与族长"]
-    B1["创3:15 后裔"]
-    B2["挪亚 / 亚伯拉罕"]
-    B3["以信称义范式"]
-    B0 --> B1
-    B0 --> B2
-    B0 --> B3
-  end
-
-  subgraph SC[" "]
-    direction TB
-    C0["出埃及与西奈"]
-    C1["先救赎后律法"]
-    C2["会幕同在"]
-    C3["申命记评分册"]
-    C0 --> C1
-    C0 --> C2
-    C0 --> C3
-  end
-
-  subgraph SD[" "]
-    direction TB
-    D0["国度与诸王"]
-    D1["大卫之约"]
-    D2["931 分裂"]
-    D3["722 / 586"]
-    D0 --> D1
-    D0 --> D2
-    D0 --> D3
-  end
-
-  subgraph SE[" "]
-    direction TB
-    E0["先知与被掳"]
-    E1["约的检察官"]
-    E2["新心新约"]
-    E3["人子得国"]
-    E0 --> E1
-    E0 --> E2
-    E0 --> E3
-  end
-
-  subgraph SF[" "]
-    direction TB
-    F0["基督与教会"]
-    F1["成全影儿"]
-    F2["圣灵宣教"]
-    F3["已然未济"]
-    F0 --> F1
-    F0 --> F2
-    F0 --> F3
-  end
-
-  subgraph SG[" "]
-    direction TB
-    G0["终末"]
-    G1["再来审判"]
-    G2["身体复活"]
-    G3["新耶路撒冷"]
-    G0 --> G1
-    G0 --> G2
-    G0 --> G3
-  end
-
-  classDef root fill:#f0d878,stroke:#c9a227,color:#1a1a1a,stroke-width:2px
-  classDef gold fill:#f5e6c4,stroke:#d4af37,color:#1a1a1a
-  classDef blue fill:#d6e8f8,stroke:#6ba3e0,color:#1a1a1a
-  classDef purple fill:#e6dcf5,stroke:#b39ddb,color:#1a1a1a
-  classDef green fill:#d4eedf,stroke:#3d9a6a,color:#1a1a1a
-  classDef teal fill:#d4f0ee,stroke:#5ec4c0,color:#1a1a1a
-  classDef rose fill:#f5d6d6,stroke:#c45c5c,color:#1a1a1a
-  classDef amber fill:#f5e0c8,stroke:#e8a85c,color:#1a1a1a
-
-  class ROOT root
-  class A0,A1,A2,A3 gold
-  class B0,B1,B2,B3 blue
-  class C0,C1,C2,C3 purple
-  class D0,D1,D2,D3 green
-  class E0,E1,E2,E3 teal
-  class F0,F1,F2,F3 rose
-  class G0,G1,G2,G3 amber
-
-  style SA fill:#152238,stroke:#d4af37,color:#f0d878
-  style SB fill:#152238,stroke:#6ba3e0,color:#f0d878
-  style SC fill:#152238,stroke:#b39ddb,color:#f0d878
-  style SD fill:#152238,stroke:#3d9a6a,color:#f0d878
-  style SE fill:#152238,stroke:#5ec4c0,color:#f0d878
-  style SF fill:#152238,stroke:#c45c5c,color:#f0d878
-  style SG fill:#152238,stroke:#e8a85c,color:#f0d878
-    </pre>
-  </div>
+  <h3 id="sec-storyline-mind">故事线思维导图</h3>
+  <div class="storyline-mind card" role="region" aria-label="整本圣经一条救赎故事：七段故事线思维导图">
+    <div class="sm-hub">
+      <div class="sm-hub-title">整本圣经</div>
+      <div class="sm-hub-sub">一条救赎故事</div>
+    </div>
+    <div class="sm-stem" aria-hidden="true"></div>
+    <div class="sm-branches">
+      <article class="sm-branch sm-gold">
+        <h4 class="sm-branch-title">创造与堕落</h4>
+        <ul class="sm-kids">
+          <li>创1–2 美善</li>
+          <li>创3 堕落与敌意</li>
+          <li>行为之约破碎</li>
+        </ul>
+      </article>
+      <article class="sm-branch sm-blue">
+        <h4 class="sm-branch-title">应许与族长</h4>
+        <ul class="sm-kids">
+          <li>创3:15 后裔</li>
+          <li>挪亚 / 亚伯拉罕</li>
+          <li>以信称义范式</li>
+        </ul>
+      </article>
+      <article class="sm-branch sm-purple">
+        <h4 class="sm-branch-title">出埃及与西奈</h4>
+        <ul class="sm-kids">
+          <li>先救赎后律法</li>
+          <li>会幕同在</li>
+          <li>申命记评分册</li>
+        </ul>
+      </article>
+      <article class="sm-branch sm-green">
+        <h4 class="sm-branch-title">国度与诸王</h4>
+        <ul class="sm-kids">
+          <li>大卫之约</li>
+          <li>931 分裂</li>
+          <li>722 / 586</li>
+        </ul>
+      </article>
+      <article class="sm-branch sm-teal">
+        <h4 class="sm-branch-title">先知与被掳</h4>
+        <ul class="sm-kids">
+          <li>约的检察官</li>
+          <li>新心新约</li>
+          <li>人子得国</li>
+        </ul>
+      </article>
+      <article class="sm-branch sm-rose">
+        <h4 class="sm-branch-title">基督与教会</h4>
+        <ul class="sm-kids">
+          <li>成全影儿</li>
+          <li>圣灵宣教</li>
+          <li>已然未济</li>
+        </ul>
+      </article>
+      <article class="sm-branch sm-amber">
+        <h4 class="sm-branch-title">终末</h4>
+        <ul class="sm-kids">
+          <li>再来审判</li>
+          <li>身体复活</li>
+          <li>新耶路撒冷</li>
+        </ul>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -3301,6 +3254,6 @@ flowchart TB
 
   <button type="button" class="back-top" id="back-top" aria-label="回到顶部">↑</button>
 
-  <script src="assets/app.js?v=storyflow1" defer></script>
+  <script src="assets/app.js?v=storyhtml1" defer></script>
 </body>
 </html>

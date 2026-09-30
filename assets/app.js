@@ -368,18 +368,6 @@
     });
     mermaid.run({ querySelector: ".mermaid" })
       .then(() => {
-        document.querySelectorAll(".storyline-mind svg").forEach((svg) => {
-          const w = Number(svg.getAttribute("width")) || 0;
-          const vb = (svg.getAttribute("viewBox") || "").split(/\s+/);
-          const vbW = vb.length === 4 ? Number(vb[2]) : 0;
-          const target = Math.max(1280, w, vbW || 0);
-          svg.setAttribute("width", String(target));
-          if (svg.style) {
-            svg.style.width = target + "px";
-            svg.style.maxWidth = "none";
-            svg.style.height = "auto";
-          }
-        });
         forceMermaidContrast();
         // Second pass after layout settles
         setTimeout(forceMermaidContrast, 120);

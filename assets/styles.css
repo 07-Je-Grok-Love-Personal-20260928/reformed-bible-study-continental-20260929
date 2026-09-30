@@ -1270,36 +1270,185 @@ td.year { font-family: var(--font-mono); color: var(--accent-soft); white-space:
   }
 }
 
-/* Storyline structure flowchart: wide scroll wrap, no compressed crossings */
-.mermaid-wrap.storyline-mind {
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-x: contain;
+/* Storyline HTML/CSS mindmap — hub + 7 branch cards; no Mermaid edges = zero crossings */
+.storyline-mind {
+  padding: 1.35rem 1.2rem 1.4rem;
+  overflow: visible;
   max-width: 100%;
 }
-.mermaid-wrap.storyline-mind .mermaid {
-  display: block;
-  min-width: 1280px;
-  width: max-content;
-  max-width: none;
-  justify-content: flex-start;
+.sm-hub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  margin: 0 auto;
+  width: min(100%, 300px);
+  padding: 1rem 1.35rem;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(145deg, var(--gold-light), var(--gold), var(--gold-dim));
+  color: #1a1a1a;
+  text-align: center;
+  box-shadow: var(--shadow-glow), 0 6px 20px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(201, 162, 39, 0.65);
+  position: relative;
+  z-index: 2;
 }
-.mermaid-wrap.storyline-mind .mermaid svg {
-  max-width: none !important;
-  min-width: 1280px;
-  width: auto;
-  height: auto !important;
+.sm-hub-title {
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
 }
-.mermaid-wrap.storyline-mind .cluster rect {
-  rx: 10px;
-  ry: 10px;
+.sm-hub-sub {
+  font-weight: 600;
+  font-size: 0.88rem;
+  opacity: 0.88;
+  line-height: 1.35;
 }
-.mermaid-wrap.storyline-mind .nodeLabel,
-.mermaid-wrap.storyline-mind .nodeLabel span,
-.mermaid-wrap.storyline-mind foreignObject div,
-.mermaid-wrap.storyline-mind foreignObject span {
-  color: #1a1a1a !important;
+.sm-stem {
+  width: 3px;
+  height: 1.1rem;
+  margin: 0 auto;
+  background: linear-gradient(180deg, var(--gold), rgba(212, 175, 55, 0.25));
+  border-radius: 2px;
+  position: relative;
+  z-index: 1;
+}
+.sm-branches {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  align-items: stretch;
+}
+.sm-branch {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem 0.95rem;
+  box-shadow: var(--shadow-soft);
+  border-top-width: 3px;
+  min-width: 0; /* prevent grid blowout / overlap */
+  overflow: hidden;
+}
+.sm-branch-title {
+  margin: 0 0 0.55rem;
+  font-size: 0.98rem;
+  font-weight: 750;
+  line-height: 1.35;
+  color: var(--gold-light);
+}
+.sm-kids {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.sm-kids li {
+  margin: 0;
+  padding: 0.4rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: #1a1a1a;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+/* Chip-aligned branch accents */
+.sm-branch.sm-gold {
+  border-top-color: #d4af37;
+  border-color: rgba(212, 175, 55, 0.35);
+}
+.sm-branch.sm-gold .sm-branch-title { color: var(--gold-light); }
+.sm-branch.sm-gold .sm-kids li {
+  background: #f5e6c4;
+  border-color: rgba(212, 175, 55, 0.45);
+}
+.sm-branch.sm-blue {
+  border-top-color: #6ba3e0;
+  border-color: rgba(107, 163, 224, 0.35);
+}
+.sm-branch.sm-blue .sm-branch-title { color: #b8d4f0; }
+.sm-branch.sm-blue .sm-kids li {
+  background: #d6e8f8;
+  border-color: rgba(107, 163, 224, 0.45);
+}
+.sm-branch.sm-purple {
+  border-top-color: #b39ddb;
+  border-color: rgba(179, 157, 219, 0.35);
+}
+.sm-branch.sm-purple .sm-branch-title { color: #d8c8f0; }
+.sm-branch.sm-purple .sm-kids li {
+  background: #e6dcf5;
+  border-color: rgba(179, 157, 219, 0.45);
+}
+.sm-branch.sm-green {
+  border-top-color: #3d9a6a;
+  border-color: rgba(61, 154, 106, 0.35);
+}
+.sm-branch.sm-green .sm-branch-title { color: #a8dfc4; }
+.sm-branch.sm-green .sm-kids li {
+  background: #d4eedf;
+  border-color: rgba(61, 154, 106, 0.45);
+}
+.sm-branch.sm-teal {
+  border-top-color: #5ec4c0;
+  border-color: rgba(94, 196, 192, 0.35);
+}
+.sm-branch.sm-teal .sm-branch-title { color: #a8e8e4; }
+.sm-branch.sm-teal .sm-kids li {
+  background: #d4f0ee;
+  border-color: rgba(94, 196, 192, 0.45);
+}
+.sm-branch.sm-rose {
+  border-top-color: #c45c5c;
+  border-color: rgba(196, 92, 92, 0.35);
+}
+.sm-branch.sm-rose .sm-branch-title { color: #f0b8b8; }
+.sm-branch.sm-rose .sm-kids li {
+  background: #f5d6d6;
+  border-color: rgba(196, 92, 92, 0.4);
+}
+.sm-branch.sm-amber {
+  border-top-color: #e8a85c;
+  border-color: rgba(232, 168, 92, 0.35);
+}
+.sm-branch.sm-amber .sm-branch-title { color: #f0d0a0; }
+.sm-branch.sm-amber .sm-kids li {
+  background: #f5e0c8;
+  border-color: rgba(232, 168, 92, 0.45);
+}
+@media (min-width: 640px) {
+  .sm-branches {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 900px) {
+  .sm-branches {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  /* Last card (终末) centered under the row when 7 items / 3 cols */
+  .sm-branch.sm-amber {
+    grid-column: 2;
+  }
+}
+@media (min-width: 1180px) {
+  /* Radial-ish ring: 3 above, hub already above stem, 4 below — use 4-col bottom feel via 4 cols */
+  .sm-branches {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .sm-branch.sm-amber {
+    grid-column: auto;
+  }
+  /* Place first 3 spanning visually as top row; remaining 4 on second — natural grid flow, no overlap */
+}
+@media (max-width: 480px) {
+  .storyline-mind { padding: 1.05rem 0.85rem 1.15rem; }
+  .sm-hub { width: 100%; padding: 0.9rem 1rem; }
+  .sm-hub-title { font-size: 0.98rem; }
+  .sm-kids li { font-size: 0.84rem; }
 }
 
 
